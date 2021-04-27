@@ -166,6 +166,10 @@ body {
     text-decoration: none;
     margin-left: 20em;
   }
+  form .user-details2 .input-box {
+    margin: 25px 0 25px 0;
+    width: calc(100% / 1.5 - 10px);
+  }
   @media screen and (max-width: 800px) 
   {
     body {
