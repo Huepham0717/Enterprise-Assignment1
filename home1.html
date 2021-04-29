@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .navi {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            background: whitesmoke;
+            border-bottom: 2px solid lightskyblue;
+        }
+        
+        .navi a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+        
+        .navi div {
+            margin-right: 30%;
+        }
+        
+        .navi .logo {
+            margin-right: 0;
+        }
+        /* .navi.button {} */
+        
+        .openBtn {
+            margin-right: 280px;
+            border: none;
+            padding: 15px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: whitesmoke;
+        }
+        
+        .openBtn:hover {
+            font-weight: bold;
+            border-bottom: 4px solid aqua;
+        }
+        
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .overlay-content {
+            position: relative;
+            top: 2%;
+            margin-left: 5%;
+            width: 80%;
+            text-align: center;
+            margin-top: 30px;
+            margin: auto;
+        }
+        
+        .overlay .closebtn {
+            position: absolute;
+            margin-right: 0px;
+            right: 20px;
+            font-size: 60px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .overlay .closebtn:hover {
+            color: #ccc;
+        }
+        
+        .overlay input[type=text] {
+            margin-left: 280px;
+            padding: 16px;
+            font-size: 20px;
+            border-radius: 12px;
+            float: center;
+            width: 80%;
+            background: white;
+        }
+        
+        .overlay input[type=text]:hover {
+            background: #f1f1f1;
+        }
+        /* .overlay button {
+            float: right;
+            width: 20%;
+            padding: 15px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .overlay button:hover {
+            background: #bbb;
+        } */
+        
+        .slideshow-container {
+            margin-top: 100px;
+            max-width: 20%;
+            position: relative;
+            margin: auto;
+        }
+        
+        .navbar {
+            list-style-type: none;
+            text-decoration: none;
+            padding: 8px 16px;
+            margin-left: 5%;
+            font-weight: bold;
+        }
+        
+        .navi .navbar li a {
+            color: black;
+            font-size: 25px;
+            float: left;
+            text-align: center;
+        }
+        
+        .navi .navbar li a:hover {
+            font-weight: bold;
+            border-bottom: 4px solid aqua;
+        }
+        
+        .topnav a {
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin-left: 90px;
+            font-size: 20px;
+            display: block;
+            text-align: center;
+        }
+        
+        .topnav a:hover {
+            font-weight: bold;
+            border-bottom: 4px solid aqua;
+        }
+        
+        .topnav a.icon {
+            background: whitesmoke;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            margin-right: 9%;
+        }
+        
+        .topnav a.icon:hover {
+            font-weight: bold;
+            border-bottom: 4px solid aqua;
+        }
+        
+        .topnav .nav-links {
+            display: flex;
+            float: right;
+            margin-right: 10px;
+            width: 20%;
+        }
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 33. 33%;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navi">
+        <div class="logo">
+            <img src="logo.png" />
+        </div>
+        <ul class="navbar justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Discover</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+
+        </div>
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+            <div class="overlay-content">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+                </form>
+            </div>
+        </div>
+        <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button>
+    </nav>
+
+    <div class="topnav">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()" class="active">
+            <i class="bi bi-bag"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                  </svg>
+        </a>
+        <div class="nav-links">
+            <div id="myLinks">
+                <li class="element" style="list-style-type: none ;">
+                    <div><a href="#news">Shopping bag</a></div>
+                </li>
+                <li class="element" style="list-style-type: none ;">
+                    <div><a href="#news">Login</a></div>
+                </li>
+                <li class="element" style="list-style-type: none ;">
+                    <div><a href="#news">Register</a></div>
+                </li>
+                <li class="element" style="list-style-type: none ;">
+                    <div><a href="#news">Account</a></div>
+                </li>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="item1.png" style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="item2.png" style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="item3.png" style="width:100%">
+
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+
+
+
+</body>
+<script>
+    function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+    }
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+
+</html>
