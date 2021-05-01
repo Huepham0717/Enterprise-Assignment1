@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Sign in</title>
 </head>
 <body>
@@ -35,7 +36,8 @@
                 </div>
                 <div class="input-box">
                     <label for="" data-placeholder="Password"></label>
-                    <input type="text" placeholder="Password" autocomplete="off" data-js="form-text" required>
+                    <input type="password" placeholder="Password" autocomplete="off" data-js="form-text"  name="password" id="password" required>
+                    <i class="far fa-eye" id="togglePassword"></i>
                 </div>
             </div>
             <div class="forgot">
@@ -47,5 +49,8 @@
         </form>
     </div>
 </body>
-<script src="register.js"></script>
+<script src="register.js">
+   
+
+</script>
 </html>
