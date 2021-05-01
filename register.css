@@ -33,6 +33,7 @@ body {
 .navi .logo {
   margin-right: 41%;
 }
+
 .container {
   max-width: 700px;
   width: 100%;
@@ -42,6 +43,11 @@ body {
   margin: 5% 25%;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.container.h1{
+  text-align: center;
+  color:#0099cc;
+  font-weight: bold;
 }
 .container .login ul {
   list-style-type: none;

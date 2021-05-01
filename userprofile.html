@@ -5,9 +5,199 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="userprofile.css">
     <title>Document</title>
 </head>
+<style>
+    body {
+  margin: 0;
+  margin-bottom: 18em;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #ffffff 10%, #0099cc 90%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.navi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  background: whitesmoke;
+  border-bottom: 2px solid lightskyblue;
+}
+.navi a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+.navi div {
+  margin-right: 30%;
+}
+.navi .back {
+  font-size: 150%;
+  font-weight: bold;
+}
+.navi .logo {
+  margin-right: 41%;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 0px 30px;
+  border-radius: 5px;
+  margin: 5% 25%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+h1{
+  text-align: center;
+  color:#0099cc;
+  font-weight: bold;
+}
+.container .login ul {
+  list-style-type: none;
+  justify-content: space-around;
+  width: 100%;
+  overflow: hidden;
+}
+.container .login li a {
+  float: right;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 20ch;
+  transition: all .5s ease;
+}
+.container .login li a.active {
+  border-bottom: 2px solid aqua;
+  text-decoration-color: aqua;
+  color: aqua;
+  font-weight: bold;
+}
 
+.container .login li a:hover:not(.active) {
+  color: aqua;
+}
+.container .login li a:hover,
+.container .forgot a:hover {
+  color: aqua;
+  font-weight: bold;
+  transition: all .5s ease;
+}
+.container form .user-details,
+.container form .user-details1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 18mm;
+  padding: 0;
+}
+.container form .user-details2 {
+  flex-wrap: block;
+  margin-left: 50mm;
+  padding: 0;
+}
+.container form .gender-details {
+  margin-right: 20mm;
+  margin-left: 18mm;
+}
+form .user-details .input-box {
+  margin: 15px 0 15px 0;
+  width: calc(100% / 2 - 20px);
+}
+form .user-details2 .input-box {
+  margin: 25px 0 25px 0;
+  width: calc(100% / 1.5 - 10px);
+}
+form .user-details1 .input-box {
+  margin: 15px 0 15px 0;
+  width: calc(100% / 1 - 10px);
+}
+.user-details .input-box label,
+.user-details1 .input-box label,
+.user-details2 .input-box label {
+  font-weight: 10;
+  margin-bottom: 5px;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+}
+.user-details .input-box label.active:after,
+.user-details1 .input-box label.active:after,
+.user-details2 .input-box label.active:after {
+  bottom: 0.1em;
+  color: #888;
+  content: attr(data-placeholder);
+  left: 0;
+  position: absolute;
+}
+.user-details .input-box input,
+.user-details1 .input-box input,
+.user-details2 .input-box input {
+  height: 45px;
+  width: 90%;
+  outline: none;
+  border-radius: 15px;
+}
+.container button:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+form .gender-details .catergory {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+.gender-details .catergory label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.gender-details .catergory .dot {
+  height: 18px;
+  width: 18px;
+  background: #d9d9d9;
+  border-radius: 50px;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked ~ .catergory label .one,
+#dot-2:checked ~ .catergory label .two,
+#dot-3:checked ~ .catergory label .three {
+  background: lightskyblue;
+  border-color: rgb(223, 209, 209);
+}
+form input[type="radio"] {
+  display: none;
+}
+.container .button {
+  margin-left: 12pc;
+  width: calc(100% / 1.3 - 10px);
+}
+.container button {
+  border-radius: 12px;
+  border: none;
+  color: whitesmoke;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+  margin: 15px 0 15px 0;
+  width: calc(100% / 1.7 - 20px);
+  background: #0099ff;
+}
+
+
+
+</style>
 <body>
     <div class="navi">
         <div class="back">
@@ -17,27 +207,73 @@
             <img src="logo.png" />
         </div>
     </div>
-    <div class="contain">
-        <div class="input-box">
-            <label for="" data-placeholder="First name"></label>
-            <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
-        </div>
-        <div class="input-box">
-            <label for="" data-placeholder="First name"></label>
-            <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
-        </div>
-        <div class="input-box">
-            <label for="" data-placeholder="First name"></label>
-            <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
-        </div>
-        <div class="input-box">
-            <label for="" data-placeholder="First name"></label>
-            <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
-        </div>
-        <div class="input-box">
-            <label for="" data-placeholder="First name"></label>
-            <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
-        </div>
+    <div class="container">
+        <h1>User profile</h1>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <label for="" data-placeholder="First name"></label>
+                    <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Last name"></label>
+                    <input type="text" placeholder="Last name" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="User name"></label>
+                    <input type="text" placeholder="User name" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Birthday"></label>
+                    <input type="date" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Email"></label>
+                    <input type="text" placeholder="name@example.coml" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Phone number"></label>
+                    <input type="text" placeholder="Phone number" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Password"></label>
+                    <input type="text" placeholder="Password" autocomplete="off" data-js="form-text" required>
+                </div>
+                <div class="input-box">
+                    <label for="" data-placeholder="Confirm Password"></label>
+                    <input type="text" placeholder="Confirm Password" autocomplete="off" data-js="form-text" required>
+                </div>
+            </div>
+            <div class="user-details1">
+                <div class="input-box">
+                    <label for="" data-placeholder="Address"></label>
+                    <input type="text" placeholder="Address" autocomplete="off" data-js="form-text" required>
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+                <input type="radio" name="gender" id="dot-3">
+                <span class="gender-title">Gender</span>
+                <div class="catergory">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="gender">Other</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <button>Save</button>
+            </div>
+        </form>
     </div>
 </body>
 
