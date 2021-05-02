@@ -42,6 +42,10 @@
     border-bottom: 4px solid aqua;
 }
 
+.is-hide {
+    display: none !important;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
