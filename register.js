@@ -8,8 +8,6 @@ togglePassword.addEventListener('click', function (e) {
     this.classList.toggle('fa-eye-slash');
 });
 
-
-
 // Select all text input fields
 var formText = document.querySelectorAll('[data-js=form-text]');
 

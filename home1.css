@@ -183,15 +183,7 @@
 }
 
 
-/* Number text (1/3 etc) */
 
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
 
 
 /* The dots/bullets/indicators */
@@ -224,19 +216,35 @@
     display: grid;
     margin-left: 350px;
     margin-right: 350px;
-    grid-column-gap: 50px;
+    grid-column-gap: 5px;
     grid-template-columns: auto auto auto;
-    grid-row-gap: 50px;
+    grid-row-gap: 10px;
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+    
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 130px;
+    float: center;
+    width: 210px;
+    height: 180px;
     font-size: 30px;
     text-align: center;
+}
+.heading h1{
+    background-color: royalblue;
+    color:#bbb;
+    text-align: left;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+.heading a{
+    background-color: royalblue;
+    color:#bbb;
+    text-align: center;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
 @-webkit-keyframes fade {
