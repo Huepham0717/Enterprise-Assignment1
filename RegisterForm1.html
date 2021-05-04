@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .navbar-collapse a {
+        font-size: 30px;
+    }
+    
+    .openBtn {
+        margin-left: 20%;
+        border: none;
+        padding: 15px 20px;
+        font-size: 120%;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .openBtn:hover {
+        font-weight: bold;
+        border-bottom: 4px solid aqua;
+    }
+    
+    .overlay {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 00;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .overlay-content {
+        position: relative;
+        top: 3%;
+        width: 60%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+    }
+    
+    .overlay .closebtn {
+        position: absolute;
+        margin-right: 0px;
+        right: 20px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .overlay .closebtn:hover {
+        color: #ccc;
+    }
+    
+    .overlay input[type=text] {
+        padding: 16px;
+        font-size: 20px;
+        border-radius: 12px;
+        float: center;
+        width: 80%;
+        background: white;
+    }
+    
+    .overlay input[type=text]:hover {
+        background: #f1f1f1;
+    }
+    
+    .userBtn {
+        margin-left: 2%;
+        border: none;
+        padding: 15px 20px;
+        font-size: 120%;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .userBtn:hover {
+        font-weight: bold;
+        border-bottom: 4px solid aqua;
+    }
+    
+    .cartBtn {
+        margin-left: 2%;
+        border: none;
+        padding: 15px 20px;
+        font-size: 120%;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .cartBtn:hover {
+        font-weight: bold;
+        border-bottom: 4px solid aqua;
+    }
+    
+    .navbar-nav {
+        margin-left: 55%;
+    }
+    
+    .navbar-nav a {
+        font-size: 150%;
+    }
+    
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+    /* BASIC */
+    
+    html {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: white;
+    }
+    
+    body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+    }
+    
+    a {
+        color: #92badd;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 400;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 40px 8px 10px 8px;
+        color: #cccccc;
+    }
+    /* STRUCTURE */
+    
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+        padding: 20px;
+    }
+    
+    #formContent {
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
+        background: #fff;
+        padding: 30px;
+        width: 90%;
+        max-width: 700px;
+        padding: 0px;
+        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+    
+    #formFooter {
+        background-color: #f6f6f6;
+        border-top: 1px solid #dce8f1;
+        padding: 25px;
+        text-align: center;
+        -webkit-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
+    }
+    /* TABS */
+    
+    .h2 {
+        margin-bottom: 80px;
+    }
+    
+    .h2 div {
+        display: block;
+        padding: 14px 16px;
+        float: right;
+        margin-left: 10px;
+        margin-right: 150px;
+    }
+    
+    h2.inactive {
+        color: #cccccc;
+    }
+    
+    h2.active {
+        color: #0d0d0d;
+        border-bottom: 2px solid #5fbae9;
+    }
+    /* FORM TYPOGRAPHY*/
+    
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+        background-color: #56baed;
+        border: none;
+        color: white;
+        padding: 15px 80px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 13px;
+        -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+        box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        margin: 5px 20px 40px 20px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    input[type=button]:hover,
+    input[type=submit]:hover,
+    input[type=reset]:hover {
+        background-color: #39ace7;
+    }
+    
+    input[type=button]:active,
+    input[type=submit]:active,
+    input[type=reset]:active {
+        -moz-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -o-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    
+    input[type=text] {
+        background-color: #f6f6f6;
+        border: none;
+        color: #0d0d0d;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border: 2px solid #f6f6f6;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    
+    input[type=text]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #5fbae9;
+    }
+    
+    input[type=text]:placeholder {
+        color: #cccccc;
+    }
+    /* ANIMATIONS */
+    /* Simple CSS3 Fade-in-down Animation */
+    
+    .fadeInDown {
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    
+    @-webkit-keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+    
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+    /* Simple CSS3 Fade-in Animation */
+    
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .fadeIn {
+        opacity: 0;
+        -webkit-animation: fadeIn ease-in 1;
+        -moz-animation: fadeIn ease-in 1;
+        animation: fadeIn ease-in 1;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s;
+    }
+    
+    .fadeIn.first {
+        -webkit-animation-delay: 0.4s;
+        -moz-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+    
+    .fadeIn.second {
+        -webkit-animation-delay: 0.6s;
+        -moz-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+    
+    .fadeIn.third {
+        -webkit-animation-delay: 0.8s;
+        -moz-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+    }
+    
+    .fadeIn.fourth {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+    /* Simple CSS3 Fade-in Animation */
+    
+    .underlineHover:after {
+        display: block;
+        left: 0;
+        bottom: -10px;
+        width: 0;
+        height: 2px;
+        background-color: #56baed;
+        content: "";
+        transition: width 0.2s;
+    }
+    
+    .underlineHover:hover {
+        color: #0d0d0d;
+    }
+    
+    .underlineHover:hover:after {
+        width: 100%;
+    }
+    /* OTHERS */
+    
+    *:focus {
+        outline: none;
+    }
+</style>
+
+<body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first,
+    then Popper.js,
+    then Bootstrap JS -->
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link underlineHover" href="#">Discover</a></li>
+                <li class="nav-item"><a class="nav-link underlineHover" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link underlineHover" href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+            <div class="overlay-content">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+
+                </form>
+            </div>
+        </div>
+        <button class="openBtn bg-dark " onclick="openSearch()"><i class="fa fa-search"></i></button>
+
+        <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+        <button class="cartBtn bg-dark"><i class="fa fa-shopping-cart"></i></button>
+    </nav>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <div class="h2">
+                <div>
+                    <h2 class="active"> Sign In </h2>
+                </div>
+                <div>
+                    <h2 class="inactive underlineHover">Sign Up </h2>
+                </div>
+            </div>
+
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="" data-placeholder="First name"></label>
+                        <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Last name"></label>
+                        <input type="text" placeholder="Last name" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="User name"></label>
+                        <input type="text" placeholder="User name" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Birthday"></label>
+                        <input type="text" placeholder="Birthday" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Email"></label>
+                        <input type="text" placeholder="name@example.coml" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Phone number"></label>
+                        <input type="text" placeholder="Phone number" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Password"></label>
+                        <input type="text" placeholder="Password" autocomplete="off" data-js="form-text" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="" data-placeholder="Confirm Password"></label>
+                        <input type="text" placeholder="Confirm Password" autocomplete="off" data-js="form-text" required>
+                    </div>
+                </div>
+                <div class="user-details1">
+                    <div class="input-box">
+                        <label for="" data-placeholder="Address"></label>
+                        <input type="text" placeholder="Address" autocomplete="off" data-js="form-text" required>
+                    </div><br>
+                </div>
+                <div class="gender-details">
+                    <!-- <input type="radio" name="gender" id="dot-1"><br>
+                    <input type="radio" name="gender" id="dot-2"><br>
+                    <input type="radio" name="gender" id="dot-3"><br> -->
+                    <span class="gender-title">Gender</span>
+                    <div class="catergory">
+                        <label for="dot-1">
+                            <input type="radio" name="gender" id="dot-1">
+                            <span class="gender">Male</span><br> 
+                        </label>
+                        <label for="dot-2">
+                            <input type="radio" name="gender" id="dot-2">
+                            <span class="gender">Female</span><br> 
+                        </label>
+                        <label for="dot-3">
+                            <input type="radio" name="gender" id="dot-3">
+                            <span class="gender">Other</span><br> 
+                        </label>
+                    </div>
+                </div>
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">Save</a>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+</body>
+<script>
+    function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+
+</html>
