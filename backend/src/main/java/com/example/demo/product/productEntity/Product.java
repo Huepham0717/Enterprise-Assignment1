@@ -1,9 +1,6 @@
 package com.example.demo.product.productEntity;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-
-@Entity
+//@Entity
 //@Embeddable
 public class Product {
     private Long productSKU;
@@ -14,7 +11,7 @@ public class Product {
     private Long productStock;
     private String productDescription;
     private String productImageURL;
-    private Float productDiscountFlag;
+    private Boolean productDiscountFlag;
 
     public Product() {
     }
@@ -27,7 +24,7 @@ public class Product {
                    Long productStock,
                    String productDescription,
                    String productImageURL,
-                   Float productDiscountFlag) {
+                   Boolean productDiscountFlag) {
         this.productSKU = productSKU;
         this.productName = productName;
         this.productBrand = productBrand;
@@ -46,7 +43,7 @@ public class Product {
                    Long productStock,
                    String productDescription,
                    String productImageURL,
-                   Float productDiscountFlag) {
+                   Boolean productDiscountFlag) {
         this.productName = productName;
         this.productBrand = productBrand;
         this.productPrice = productPrice;
@@ -121,11 +118,11 @@ public class Product {
         this.productImageURL = productImageURL;
     }
 
-    public Float getProductDiscountFlag() {
+    public Boolean getProductDiscountFlag() {
         return productDiscountFlag;
     }
 
-    public void setProductDiscountFlag(Float productDiscountFlag) {
+    public void setProductDiscountFlag(Boolean productDiscountFlag) {
         this.productDiscountFlag = productDiscountFlag;
     }
 
