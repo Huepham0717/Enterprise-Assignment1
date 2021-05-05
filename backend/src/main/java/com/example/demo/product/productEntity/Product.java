@@ -3,10 +3,10 @@ package com.example.demo.product.productEntity;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
-//@Entity
-@Embeddable
+@Entity
+//@Embeddable
 public class Product {
-    private String productSKU;
+    private Long productSKU;
     private String productName;
     private String productBrand;
     private Float productPrice;
@@ -19,7 +19,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String productSKU,
+    public Product(Long productSKU,
                    String productName,
                    String productBrand,
                    Float productPrice,
@@ -39,11 +39,29 @@ public class Product {
         this.productDiscountFlag = productDiscountFlag;
     }
 
-    public String getProductSKU() {
+    public Product(String productName,
+                   String productBrand,
+                   Float productPrice,
+                   String productWarrantyPeriod,
+                   Long productStock,
+                   String productDescription,
+                   String productImageURL,
+                   Float productDiscountFlag) {
+        this.productName = productName;
+        this.productBrand = productBrand;
+        this.productPrice = productPrice;
+        this.productWarrantyPeriod = productWarrantyPeriod;
+        this.productStock = productStock;
+        this.productDescription = productDescription;
+        this.productImageURL = productImageURL;
+        this.productDiscountFlag = productDiscountFlag;
+    }
+
+    public Long getProductSKU() {
         return productSKU;
     }
 
-    public void setProductSKU(String productSKU) {
+    public void setProductSKU(Long productSKU) {
         this.productSKU = productSKU;
     }
 
@@ -114,7 +132,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "productSKU='" + productSKU + '\'' +
+                "productSKU=" + productSKU +
                 ", productName='" + productName + '\'' +
                 ", productBrand='" + productBrand + '\'' +
                 ", productPrice=" + productPrice +
