@@ -1,17 +1,30 @@
 package com.example.demo.product.productEntity;
 
-//@Entity
-//@Embeddable
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products",uniqueConstraints={@UniqueConstraint(columnNames ={"productSKU"})})
 public class Product {
+    @Id
+    @SequenceGenerator(
+            name = "product_sequence",
+            sequenceName = "product_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "product_sequence"
+    )
     private Long productSKU;
     private String productName;
     private String productBrand;
-    private Float productPrice;
+    private Float productPriceOriginal;
+    private Float productPriceMultiplier;
+    private Float productPriceAdjusted;
     private String productWarrantyPeriod;
     private Long productStock;
     private String productDescription;
     private String productImageURL;
-    private Boolean productDiscountFlag;
 
     public Product() {
     }
@@ -19,39 +32,43 @@ public class Product {
     public Product(Long productSKU,
                    String productName,
                    String productBrand,
-                   Float productPrice,
+                   Float productPriceOriginal,
+                   Float productPriceMultiplier,
+                   Float productPriceAdjusted,
                    String productWarrantyPeriod,
                    Long productStock,
                    String productDescription,
-                   String productImageURL,
-                   Boolean productDiscountFlag) {
+                   String productImageURL) {
         this.productSKU = productSKU;
         this.productName = productName;
         this.productBrand = productBrand;
-        this.productPrice = productPrice;
+        this.productPriceOriginal = productPriceOriginal;
+        this.productPriceMultiplier = productPriceMultiplier;
+        this.productPriceAdjusted = productPriceAdjusted;
         this.productWarrantyPeriod = productWarrantyPeriod;
         this.productStock = productStock;
         this.productDescription = productDescription;
         this.productImageURL = productImageURL;
-        this.productDiscountFlag = productDiscountFlag;
     }
 
     public Product(String productName,
                    String productBrand,
-                   Float productPrice,
+                   Float productPriceOriginal,
+                   Float productPriceMultiplier,
+                   Float productPriceAdjusted,
                    String productWarrantyPeriod,
                    Long productStock,
                    String productDescription,
-                   String productImageURL,
-                   Boolean productDiscountFlag) {
+                   String productImageURL) {
         this.productName = productName;
         this.productBrand = productBrand;
-        this.productPrice = productPrice;
+        this.productPriceOriginal = productPriceOriginal;
+        this.productPriceMultiplier = productPriceMultiplier;
+        this.productPriceAdjusted = productPriceAdjusted;
         this.productWarrantyPeriod = productWarrantyPeriod;
         this.productStock = productStock;
         this.productDescription = productDescription;
         this.productImageURL = productImageURL;
-        this.productDiscountFlag = productDiscountFlag;
     }
 
     public Long getProductSKU() {
@@ -78,12 +95,28 @@ public class Product {
         this.productBrand = productBrand;
     }
 
-    public Float getProductPrice() {
-        return productPrice;
+    public Float getProductPriceOriginal() {
+        return productPriceOriginal;
     }
 
-    public void setProductPrice(Float productPrice) {
-        this.productPrice = productPrice;
+    public void setProductPriceOriginal(Float productPriceOriginal) {
+        this.productPriceOriginal = productPriceOriginal;
+    }
+
+    public Float getProductPriceMultiplier() {
+        return productPriceMultiplier;
+    }
+
+    public void setProductPriceMultiplier(Float productPriceMultiplier) {
+        this.productPriceMultiplier = productPriceMultiplier;
+    }
+
+    public Float getProductPriceAdjusted() {
+        return productPriceAdjusted;
+    }
+
+    public void setProductPriceAdjusted(Float productPriceAdjusted) {
+        this.productPriceAdjusted = productPriceAdjusted;
     }
 
     public String getProductWarrantyPeriod() {
@@ -118,26 +151,19 @@ public class Product {
         this.productImageURL = productImageURL;
     }
 
-    public Boolean getProductDiscountFlag() {
-        return productDiscountFlag;
-    }
-
-    public void setProductDiscountFlag(Boolean productDiscountFlag) {
-        this.productDiscountFlag = productDiscountFlag;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
                 "productSKU=" + productSKU +
                 ", productName='" + productName + '\'' +
                 ", productBrand='" + productBrand + '\'' +
-                ", productPrice=" + productPrice +
+                ", productPriceOriginal=" + productPriceOriginal +
+                ", productPriceMultiplier=" + productPriceMultiplier +
+                ", productPriceAdjusted=" + productPriceAdjusted +
                 ", productWarrantyPeriod='" + productWarrantyPeriod + '\'' +
                 ", productStock=" + productStock +
                 ", productDescription='" + productDescription + '\'' +
                 ", productImageURL='" + productImageURL + '\'' +
-                ", productDiscountFlag=" + productDiscountFlag +
                 '}';
     }
 }

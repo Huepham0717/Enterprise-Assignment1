@@ -24,11 +24,17 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="a489d5f0-5202-425c-821a-1af1ac8a48e8">
+        <schema name="information_schema" object-types="view, function" />
+        <schema name="pg_catalog" object-types="view, function, table" />
+        <schema name="public" object-types="sequence, view, dataset trigger, index, constraint, function, column, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="a489d5f0-5202-425c-821a-1af1ac8a48e8">
-      <console name="postgres" type="STANDARD" schema="information_schema" session="Main" />
+      <console name="postgres" type="STANDARD" schema="information_schema" session="Main"><![CDATA[SELECT * from products;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -40,6 +46,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="a489d5f0-5202-425c-821a-1af1ac8a48e8" dataset="public.users" active-filter-id="" />
     <filter-actions connection-id="a489d5f0-5202-425c-821a-1af1ac8a48e8" dataset="public.confirmation_token" active-filter-id="" />
+    <filter-actions connection-id="a489d5f0-5202-425c-821a-1af1ac8a48e8" dataset="public.products" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
