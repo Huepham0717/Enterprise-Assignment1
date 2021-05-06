@@ -16,37 +16,37 @@ public class ProductConfig {
             Product iPhone12ProMax128GBUnlocked = new Product(
                     "iPhone 12 Pro Max 128GB Unlocked",
                     "Apple",
-                    1099.00F,
-                    1F,
-                    1099.00F,
+                    "Phone",
                     "12 Months",
                     100L,
                     "issa iPhone 12 Pro Max 128GB Unlocked",
-                    "issa photo of an iPhone 12 Pro Max 128GB Unlocked"
+                    "issa photo of an iPhone 12 Pro Max 128GB Unlocked",
+                    1099.00F,
+                    0.5F
             );
 
             Product iPhone12ProMax256GBUnlocked = new Product(
                     "iPhone 12 Pro Max 256GB Unlocked",
                     "Apple",
-                    1199.00F,
-                    1F,
-                    1199.00F,
+                    "Phone",
                     "12 Months",
                     100L,
                     "issa iPhone 12 Pro Max 256GB Unlocked",
-                    "issa photo of an iPhone 12 Pro Max 256GB Unlocked"
+                    "issa photo of an iPhone 12 Pro Max 256GB Unlocked",
+                    1199.00F,
+                    0.5F
             );
 
             Product iPhone12ProMax512GBUnlocked = new Product(
                     "iPhone 12 Pro Max 512GB Unlocked",
                     "Apple",
-                    1399.00F,
-                    1F,
-                    1399.00F,
+                    "Phone",
                     "12 Months",
                     100L,
                     "issa iPhone 12 Pro Max 512GB Unlocked",
-                    "issa photo of an iPhone 12 Pro Max 512GB Unlocked"
+                    "issa photo of an iPhone 12 Pro Max 512GB Unlocked",
+                    1399.00F,
+                    0.5F
             );
 
             productRepository.saveAll(
