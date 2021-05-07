@@ -51,7 +51,15 @@
     .navbar-collapse a {
       font-size: 30px;
     }
-
+    .item{
+      transition: .3s;
+      border-radius:10px;
+      border: 0px  #ccc;
+      background: #fff;
+    }
+    .item:hover {
+      box-shadow: 0 0 10px rgba(33,33,33,.2);
+    }
     .openBtn {
       margin-left: 20%;
       border: none;
@@ -192,6 +200,9 @@
     .btn-product {
       width: 100%;
     }
+    .thumbnail{
+      border: none;
+    }
   </style>
 
   <body>
@@ -250,7 +261,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="col-sm-6 col-md-4">
+          <div class="item col-sm-6 col-md-4" style="margin-right:">
             <div class="thumbnail">
               <h4 class="text-center">
                 <span class="label label-info">Beat power</span>
@@ -287,7 +298,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="item col-sm-6 col-md-4">
             <div class="thumbnail">
               <h4 class="text-center">
                 <span class="label label-info">Beat power</span>
@@ -324,7 +335,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="item col-sm-6 col-md-4">
             <div class="thumbnail">
               <h4 class="text-center">
                 <span class="label label-info">Beat power</span>
@@ -361,7 +372,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="item col-sm-6 col-md-4">
             <div class="thumbnail">
               <h4 class="text-center">
                 <span class="label label-info">Beat power</span>
