@@ -5,6 +5,8 @@ import com.example.demo.user.service.UserRepository;
 import com.example.demo.user.entity.token.ConfirmationToken;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,10 +16,8 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.UUID;
+import static java.util.Collections.singletonList;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -95,8 +95,20 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        return userRepository.findUsersByUserName(userName)
-                .orElseThrow(()-> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
+        Optional<User> userOptional = userRepository.findUsersByUserName(userName);
+
+        User user = userOptional
+                .orElseThrow(()->
+                        new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
+
+        return new org.springframework.security
+                .core.userdetails.User(user.getUsername(), user.getPassword(),
+                true, true, true,
+                true, getAuthorities("USER"));
+    }
+
+    private Collection<? extends GrantedAuthority> getAuthorities(String role) {
+        return singletonList(new SimpleGrantedAuthority(role));
     }
     public String signUpUser(User user){
         boolean userExists=userRepository.findUsersByEmail(user.getEmail()).isPresent();
