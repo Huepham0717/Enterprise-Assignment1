@@ -55,7 +55,7 @@ public class UserService implements UserDetailsService {
     @ Transactional
     public void updateUser(Long userId, String firstName,
                            String userName, String lastName,
-                           LocalDate birthDay, String address,
+                           LocalDate birthDay, Long phoneNumber, String address,
                            String email){
         User user = userRepository.findById(userId).orElseThrow(()-> new IllegalStateException(
                 "User with id "+userId+" does not exists"
@@ -70,6 +70,9 @@ public class UserService implements UserDetailsService {
         }
         if (birthDay != null && !Objects.equals(user.getBirthDay(),birthDay)){
             user.setBirthDay(birthDay);
+        }
+        if (phoneNumber != null && !Objects.equals(user.getPhoneNumber(),phoneNumber)){
+            user.setPhoneNumber(phoneNumber);
         }
         if (address != null && address.length() > 0
                 && !Objects.equals(user.getAddress(),address)){
@@ -95,16 +98,18 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        Optional<User> userOptional = userRepository.findUsersByUserName(userName);
-
-        User user = userOptional
-                .orElseThrow(()->
-                        new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
-
-        return new org.springframework.security
-                .core.userdetails.User(user.getUsername(), user.getPassword(),
-                true, true, true,
-                true, getAuthorities("USER"));
+//        Optional<User> userOptional = userRepository.findUsersByUserName(userName);
+//
+//        User user = userOptional
+//                .orElseThrow(()->
+//                        new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
+//
+//        return new org.springframework.security
+//                .core.userdetails.User(user.getUsername(), user.getPassword(),
+//                true, true, true,
+//                true, getAuthorities("USER"));
+        return userRepository.findUsersByUserName(userName)
+                .orElseThrow(()-> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
     }
 
     private Collection<? extends GrantedAuthority> getAuthorities(String role) {
