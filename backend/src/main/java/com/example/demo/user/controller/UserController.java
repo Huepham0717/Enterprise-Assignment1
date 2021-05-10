@@ -3,13 +3,14 @@ package com.example.demo.user.controller;
 import com.example.demo.user.entity.User;
 import com.example.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping(path = "api/v1/user")
+@RequestMapping(path = "/user")
 public class UserController {
     private final UserService userService;
     @Autowired
@@ -17,10 +18,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public List<User> getUsers(){
-        return userService.getUsers();
+//    @GetMapping
+//    public List<User> getUsers(){
+//        return userService.getUsers();
+//    }
+
+    @GetMapping(path = "{userName}")
+    public UserDetails loadUserByUsername(@PathVariable("userName") String userName) {
+        return userService.loadUserByUsername(userName);
     }
+
     @PostMapping
     public void registerNewUser(@RequestBody User user){
         userService.addNewUser(user);
