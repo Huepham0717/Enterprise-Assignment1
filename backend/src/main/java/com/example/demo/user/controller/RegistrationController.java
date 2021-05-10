@@ -3,14 +3,15 @@ package com.example.demo.user.controller;
 import com.example.demo.user.entity.RegistrationRequest;
 import com.example.demo.user.service.RegistrationService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path="api/v1/registration")
+@RequestMapping(path="/registration")
 @AllArgsConstructor
 public class RegistrationController {
 
-    private RegistrationService registrationService;
+    private final RegistrationService registrationService;
 
     @PostMapping
     public String register(@RequestBody RegistrationRequest request){
