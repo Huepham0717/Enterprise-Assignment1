@@ -1,10 +1,8 @@
 package com.example.demo.user.service;
 
 import com.example.demo.user.entity.User;
-import com.example.demo.user.service.UserRepository;
 import com.example.demo.user.entity.token.ConfirmationToken;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -95,16 +93,10 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        Optional<User> userOptional = userRepository.findUsersByUserName(userName);
-
-        User user = userOptional
-                .orElseThrow(()->
-                        new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG,userName)));
-
-        return new org.springframework.security
-                .core.userdetails.User(user.getUsername(), user.getPassword(),
-                true, true, true,
-                true, getAuthorities("USER"));
+        return userRepository.findUsersByUserName(userName)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(
+                                String.format(USER_NOT_FOUND_MSG, userName)));
     }
 
     private Collection<? extends GrantedAuthority> getAuthorities(String role) {
