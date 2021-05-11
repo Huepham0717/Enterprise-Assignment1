@@ -12,7 +12,7 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-@Table(name = "product",uniqueConstraints={@UniqueConstraint(columnNames ={"productId"})})
+@Table(name = "products",uniqueConstraints={@UniqueConstraint(columnNames ={"productId"})})
 public class Product {
     @SequenceGenerator(
             name = "product_sequence",

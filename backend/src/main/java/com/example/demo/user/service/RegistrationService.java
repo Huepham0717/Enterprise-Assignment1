@@ -37,7 +37,7 @@ public class RegistrationService {
         ));
         String link ="http://localhost:8080/registration/confirm?token="+token;
         emailSender.send(request.getEmail(),buildEmail(request.getFirstName(),link));
-        return token;
+        return "{ \"message\": \"Account successfully created. Please check your email to verify and activate your account.\" }";
     }
 
     @Transactional
