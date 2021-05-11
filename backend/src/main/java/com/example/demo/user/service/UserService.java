@@ -53,7 +53,7 @@ public class UserService implements UserDetailsService {
     @ Transactional
     public void updateUser(Long userId, String firstName,
                            String userName, String lastName,
-                           LocalDate birthDay, String address,
+                           LocalDate birthDay, Long phoneNumber, String address,
                            String email){
         User user = userRepository.findById(userId).orElseThrow(()-> new IllegalStateException(
                 "User with id "+userId+" does not exists"
@@ -68,6 +68,9 @@ public class UserService implements UserDetailsService {
         }
         if (birthDay != null && !Objects.equals(user.getBirthDay(),birthDay)){
             user.setBirthDay(birthDay);
+        }
+        if (phoneNumber != null && !Objects.equals(user.getPhoneNumber(),phoneNumber)){
+            user.setPhoneNumber(phoneNumber);
         }
         if (address != null && address.length() > 0
                 && !Objects.equals(user.getAddress(),address)){

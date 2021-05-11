@@ -45,9 +45,10 @@ public class UserController {
             @RequestParam(required = false) String userName,
             @RequestParam(required = false) String lastName,
             @RequestParam(required = false) LocalDate birthDay,
+            @RequestParam(required = false) Long phoneNumber,
             @RequestParam(required = false) String address,
             @RequestParam(required = false) String email){
-        userService.updateUser(userId,firstName,userName,lastName,birthDay,address,email);
+        userService.updateUser(userId,firstName,userName,lastName,birthDay,phoneNumber,address,email);
 
     }
 }

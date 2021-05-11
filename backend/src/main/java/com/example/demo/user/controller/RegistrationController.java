@@ -5,6 +5,7 @@ import com.example.demo.user.service.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path="/registration")
 @AllArgsConstructor

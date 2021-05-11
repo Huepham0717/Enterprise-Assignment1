@@ -30,6 +30,7 @@ public class RegistrationService {
                 request.getUserName(),
                 request.getPassword(),
                 request.getBirthDay(),
+                request.getPhoneNumber(),
                 request.getAddress(),
                 request.getEmail(),
                 UserRole.USER

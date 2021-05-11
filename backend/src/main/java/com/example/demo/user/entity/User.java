@@ -37,6 +37,7 @@ public class User implements UserDetails {
     private String userName;
     private String password;
     private LocalDate birthDay;
+    private Long phoneNumber;
     private String address;
     private String email;
     @Enumerated(EnumType.STRING)
@@ -45,12 +46,13 @@ public class User implements UserDetails {
     private Boolean enabled = false;
 
     public User(String firstName,String lastName
-    ,String userName,String password, LocalDate birthDay,String address,String email,UserRole userRole){
+    ,String userName,String password, LocalDate birthDay,Long phoneNumber, String address,String email,UserRole userRole){
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.birthDay = birthDay;
+        this.phoneNumber = phoneNumber;
         this.address = address;
         this.email = email;
         this.userRole = userRole;
@@ -133,6 +135,14 @@ public class User implements UserDetails {
     public void setBirthDay(LocalDate birthDay){
         this.birthDay = birthDay;
     }
+    public Long getPhoneNumber(){
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(Long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getEmail (){
         return email;
     }
@@ -148,6 +158,7 @@ public class User implements UserDetails {
                 ",userName='"+userName+'\''+
                 ",password='"+password+'\''+
                 ",birthDay='"+birthDay+'\''+
+                ",phoneNumber='"+phoneNumber+'\''+
                 ",address='"+address+'\''+
                 ",email='"+email+'}';
     }
