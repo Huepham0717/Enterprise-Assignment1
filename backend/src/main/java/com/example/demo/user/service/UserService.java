@@ -108,10 +108,12 @@ public class UserService implements UserDetailsService {
     public String signUpUser(User user){
         boolean userExists=userRepository.findUsersByEmail(user.getEmail()).isPresent();
         boolean userExists1=userRepository.findUsersByUserName(user.getUserName()).isPresent();
-        if (userExists ){
-            throw new IllegalStateException("email already taken");
+        if (userExists && userExists1) {
+            throw new IllegalStateException("Email and username already taken. Please use a different email and username.");
+        } else if (userExists ){
+            throw new IllegalStateException("Email already taken. Please use a different email.");
         } else if (userExists1){
-            throw new IllegalStateException("username already taken");
+            throw new IllegalStateException("Username already taken. Please use a different username.");
         }
         String encodePassword= bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encodePassword);
