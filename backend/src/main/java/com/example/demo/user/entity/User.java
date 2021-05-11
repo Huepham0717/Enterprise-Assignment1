@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,10 +37,13 @@ public class User implements UserDetails {
     private String lastName;
     private String userName;
     private String password;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDay;
     private Long phoneNumber;
     private String address;
     private String email;
+
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
     private Boolean locked = false;
