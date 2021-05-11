@@ -20,7 +20,7 @@ public class LoginService {
                 (loginRequest.getUserName(),
                 loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
-        return loginRequest.getUserName();
+        String username = loginRequest.getUserName();
+        return "{ \"message\": \"Login successful. Welcome back " + username + "!\" }";
     }
-
 }

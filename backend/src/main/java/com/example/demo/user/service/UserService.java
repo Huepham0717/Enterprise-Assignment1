@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 import static java.util.Collections.singletonList;
 import java.util.*;
 
+@CrossOrigin
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
