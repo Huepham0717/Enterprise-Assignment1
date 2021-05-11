@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProductConfig {
     @Bean
-    CommandLineRunner commandLineRunner(ProductRepository repository){
+    CommandLineRunner productCommandLineRunner(ProductRepository repository){
         return args -> {
 
         };
