@@ -20,7 +20,7 @@ public class ProductService {
     public void addNewProduct(Product product){
         Optional<Product> productOptional = productRepository.findProductByProductName(product.getProductName());
         if (productOptional.isPresent()){
-            throw new IllegalStateException("email taken");
+            throw new IllegalStateException("product taken");
         }
         productRepository.save(product);
     }
