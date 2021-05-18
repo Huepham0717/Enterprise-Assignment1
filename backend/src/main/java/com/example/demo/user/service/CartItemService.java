@@ -34,7 +34,7 @@ public class CartItemService {
         if (cartItem != null){
             addQuantity = cartItem.getQuantity() + quantity;
             cartItem.setQuantity(addQuantity);
-            totalAmount = cartItem.getAmount() * addQuantity;
+            totalAmount = product.getPrice() * addQuantity;
             cartItem.setAmount(totalAmount);
         } else {
             cartItem = new CartItem();
@@ -54,7 +54,7 @@ public class CartItemService {
         if (cartItem != null){
             addQuantity = cartItem.getQuantity() - quantity;
             cartItem.setQuantity(addQuantity);
-            totalAmount = cartItem.getAmount() * addQuantity;
+            totalAmount = product.getPrice() * addQuantity;
             cartItem.setAmount(totalAmount);
         } else {
             cartItem = new CartItem();
