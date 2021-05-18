@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,7 +18,7 @@ import javax.persistence.*;
 public class Cart {
     @SequenceGenerator(
             name = "cart_sequence",
-            sequenceName = "cartDetail_sequence",
+            sequenceName = "cart_sequence",
             allocationSize = 1
     )
     @Id
@@ -25,14 +27,19 @@ public class Cart {
             generator = "cart_sequence"
     )
     private Long cartId;
+    private LocalDate date;
     @ManyToOne
-    @JoinColumn(nullable = false,name = "product_id")
-    private Product product;
-    @ManyToOne
-    @JoinColumn(nullable = false,name = "user_id")
+    @JoinColumn(nullable = false,name = "id")
     private User user;
-    private int quantity;
     private float amount;
+    @OneToMany(mappedBy="cart")
+    private List<CartItem> cartItemList;
+    public Cart(Long cartId, LocalDate date, User user, float amount) {
+        this.cartId = cartId;
+        this.date = date;
+        this.user = user;
+        this.amount = amount;
+    }
 
     public Long getCartId() {
         return cartId;
@@ -42,12 +49,12 @@ public class Cart {
         this.cartId = cartId;
     }
 
-    public Product getProduct() {
-        return product;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public User getUser() {
@@ -56,14 +63,6 @@ public class Cart {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public float getAmount() {
@@ -78,18 +77,9 @@ public class Cart {
     public String toString() {
         return "Cart{" +
                 "cartId=" + cartId +
-                ", product=" + product +
+                ", date=" + date +
                 ", user=" + user +
-                ", quantity=" + quantity +
                 ", amount=" + amount +
                 '}';
-    }
-
-    public Cart(Long cartId, Product product, User user, int quantity, float amount) {
-        this.cartId = cartId;
-        this.product = product;
-        this.user = user;
-        this.quantity = quantity;
-        this.amount = amount;
     }
 }

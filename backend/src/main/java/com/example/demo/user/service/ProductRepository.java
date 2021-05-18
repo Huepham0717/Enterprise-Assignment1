@@ -21,4 +21,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 
     @Query("SELECT p FROM Product p WHERE CONCAT(p.productName, ' ', p.brand, ' ', p.type, ' ', p.price) LIKE %?1%")
     List<Product> search(String keyword);
+
+    List<Product> findAllByOrderByPriceAsc();
+    List<Product> findAllByOrderByPriceDesc();
 }
