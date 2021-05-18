@@ -53,15 +53,25 @@ public class UserService implements UserDetailsService {
         userRepository.deleteById(userId);
     }
     @ Transactional
-    public void updateUser(Long userId, String firstName,
-                           String userName, String lastName,
-                           LocalDate birthDay, Long phoneNumber, String address,
+    public String updateUser(Long userId,
+                             String firstName,
+                             String userName,
+                             String lastName,
+                             String password,
+                             LocalDate birthDay,
+                             Long phoneNumber,
+                             String address,
                            String email){
-        User user = userRepository.findById(userId).orElseThrow(()-> new IllegalStateException(
-                "User with id "+userId+" does not exists"
-        ));
-        if(firstName != null && firstName.length() > 0
-                && !Objects.equals(user.getFirstName(),firstName )){
+        User user = userRepository.findById(userId).orElseThrow(
+                ()-> new IllegalStateException(
+                        "User with id "+userId+" does not exists"
+                )
+        );
+        if
+                (firstName != null && firstName.length() > 0
+                &&
+                !Objects.equals(user.getFirstName(),firstName ))
+         {
             user.setFirstName(firstName);
         }
         if (lastName != null && lastName.length() > 0
@@ -78,11 +88,16 @@ public class UserService implements UserDetailsService {
                 && !Objects.equals(user.getAddress(),address)){
             user.setAddress(address);
         }
+        if (password != null && password.length() > 0
+                && !Objects.equals(user.getPassword(),password)){
+            String encodePassword= bCryptPasswordEncoder.encode(password);
+            user.setPassword(encodePassword);
+        }
         if (email != null && email.length() > 0
                 && !Objects.equals(user.getEmail(),email)){
             Optional<User> userOptional = userRepository.findUsersByEmail(email);
             if(userOptional.isPresent()){
-                throw new IllegalStateException("email taken");
+                throw new IllegalStateException("Email already taken. Please use a different email.");
             }
             user.setEmail(email);
         }
@@ -90,10 +105,11 @@ public class UserService implements UserDetailsService {
                 && !Objects.equals(user.getUserName(),userName)){
             Optional<User> userOptional = userRepository.findUsersByUserName(userName);
             if(userOptional.isPresent()){
-                throw new IllegalStateException("user name taken");
+                throw new IllegalStateException("Username already taken. Please use a different username.");
             }
             user.setUserName(userName);
         }
+        return "{ \"message\": \"Account successfully updated.\" }";
     }
 
     @Override
