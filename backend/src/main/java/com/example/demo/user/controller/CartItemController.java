@@ -35,7 +35,7 @@ public class CartItemController {
                                    @PathVariable("qty") Integer quantity){
         Cart cart = cartRepository.findCartById(id);
         Integer addQuantity = cartItemService.addQuantityProduct(productId,cart,quantity);
-        return addQuantity + " products is added";
+        return addQuantity + " products currently in this cart.";
     }
     @PostMapping(path = "/remove/{cid}/{pid}/{qty}")
     public String removeProductToCart(@PathVariable("cid") Long id,
@@ -43,12 +43,12 @@ public class CartItemController {
                                    @PathVariable("qty") Integer quantity){
         Cart cart = cartRepository.findCartById(id);
         Integer addQuantity = cartItemService.removeQuantityProduct(productId,cart,quantity);
-        return addQuantity + " products is remove";
+        return addQuantity + " products currently in this cart.";
     }
     @PostMapping(path = "/remove/{cid}/{pid}")
     public String removeProductFromCart(@PathVariable("cid") Long id,
                                         @PathVariable("pid") Long productId){
         cartItemService.removeProduct(productId,id);
-        return "The product has been delete";
+        return "This product has been removed from cart.";
     }
 }

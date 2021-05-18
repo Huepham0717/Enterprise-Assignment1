@@ -34,12 +34,15 @@ public class Cart {
     private float amount;
     @OneToMany(mappedBy="cart")
     private List<CartItem> cartItemList;
+
     public Cart(Long cartId, LocalDate date, User user, float amount) {
         this.cartId = cartId;
         this.date = date;
         this.user = user;
         this.amount = amount;
     }
+
+
 
     public Long getCartId() {
         return cartId;

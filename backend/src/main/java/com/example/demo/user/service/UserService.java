@@ -53,10 +53,15 @@ public class UserService implements UserDetailsService {
         userRepository.deleteById(userId);
     }
     @ Transactional
-    public void updateUser(Long userId, String firstName,
-                           String userName, String lastName,
-                           LocalDate birthDay, Long phoneNumber, String address,
-                           String email){
+    public String updateUser(Long userId,
+                             String firstName,
+                             String userName,
+                             String lastName,
+                             String password,
+                             LocalDate birthDay,
+                             Long phoneNumber,
+                             String address,
+                             String email){
         User user = userRepository.findById(userId).orElseThrow(()-> new IllegalStateException(
                 "User with id "+userId+" does not exists"
         ));
@@ -67,6 +72,11 @@ public class UserService implements UserDetailsService {
         if (lastName != null && lastName.length() > 0
                 && !Objects.equals(user.getLastName(),lastName)){
             user.setLastName(lastName);
+        }
+        if (password != null && password.length() > 0){
+//                && !Objects.equals(user.getPassword(),password)){
+            String encodePassword= bCryptPasswordEncoder.encode(password);
+            user.setPassword(encodePassword);
         }
         if (birthDay != null && !Objects.equals(user.getBirthDay(),birthDay)){
             user.setBirthDay(birthDay);
@@ -94,6 +104,7 @@ public class UserService implements UserDetailsService {
             }
             user.setUserName(userName);
         }
+        return "{ \"message\": \"Account successfully updated.\" }";
     }
 
     @Override

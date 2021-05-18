@@ -39,16 +39,17 @@ public class UserController {
     }
 
     @PutMapping(path="{userId}")
-    public void updateUser(
+    public String updateUser(
             @PathVariable("userId") Long userId,
             @RequestParam(required = false) String firstName,
             @RequestParam(required = false) String userName,
             @RequestParam(required = false) String lastName,
+            @RequestParam(required = false) String password,
             @RequestParam(required = false) LocalDate birthDay,
             @RequestParam(required = false) Long phoneNumber,
             @RequestParam(required = false) String address,
             @RequestParam(required = false) String email){
-        userService.updateUser(userId,firstName,userName,lastName,birthDay,phoneNumber,address,email);
+        return userService.updateUser(userId,firstName,userName,lastName,password,birthDay,phoneNumber,address,email);
 
     }
 }

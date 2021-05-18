@@ -50,7 +50,7 @@ public class ProductController {
     public List<Product> sortProductByASC(@RequestParam("price") String price){
         if (price == "ASC") {
             return productRepository.findAllByOrderByPriceAsc();
-        } else if (price == "DES"){
+        } else if (price == "DESC"){
             return productRepository.findAllByOrderByPriceDesc();
         }
         return productRepository.findAll();

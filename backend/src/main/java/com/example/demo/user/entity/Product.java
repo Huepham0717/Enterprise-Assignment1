@@ -129,8 +129,19 @@ public class Product {
         this.price = price;
     }
 
-    @Id
-    public Long getProductId() {
-        return productId;
+    public Product(String productName, String brand, String type, String productWarrantyPeriod, String description, String imgURL, String discount, float price) {
+        this.productName = productName;
+        this.brand = brand;
+        this.type = type;
+        this.productWarrantyPeriod = productWarrantyPeriod;
+        this.description = description;
+        this.imgURL = imgURL;
+        this.discount = discount;
+        this.price = price;
     }
+
+    //    @Id
+//    public Long getProductId() {
+//        return productId;
+//    }
 }
