@@ -48,9 +48,9 @@ public class ProductController {
 
     @GetMapping(path ="sort")
     public List<Product> sortProductByASC(@RequestParam("price") String price){
-        if (price == "ASC") {
+        if (price.equals("ASC")) {
             return productRepository.findAllByOrderByPriceAsc();
-        } else if (price == "DESC"){
+        } else if (price.equals("DESC")){
             return productRepository.findAllByOrderByPriceDesc();
         }
         return productRepository.findAll();
