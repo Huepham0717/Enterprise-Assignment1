@@ -1,19 +1,21 @@
 package com.example.demo.user.controller;
 
 import com.example.demo.user.entity.Cart;
-import com.example.demo.user.entity.CartItem;
+import com.example.demo.user.entity.User;
 import com.example.demo.user.service.CartService;
+import com.example.demo.user.service.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
 @RequestMapping(path = "/cart")
 public class CartController {
     @Autowired
     private CartService cartService;
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     public CartController(CartService cartService) {
         this.cartService = cartService;
@@ -22,14 +24,30 @@ public class CartController {
     public void addNewCart(@RequestBody Cart cart){
         cartService.addNewCart(cart);
     }
-    // GET "localhost:8080/cart/1"
     @GetMapping(path="{id}")
-    public Cart showCart(@PathVariable("id") Long id){
-        return cartService.showCart(id);
+    public List<Cart> showCart(@PathVariable("id") Long id){
+        return cartService.listCartItems(id);
     }
-    // GET "localhost:8080/cart/user/1"
-    @GetMapping(path="user/{userId}")
-    public List<Cart> listCart(@PathVariable("userId") Long id){
-        return cartService.listCart(id);
+    @PostMapping(path = "/add/{uid}/{pid}/{qty}")
+    public String addProductToCart(@PathVariable("uid") Long id,
+                                   @PathVariable("pid") Long productId,
+                                   @PathVariable("qty") Integer quantity){
+        User user = userRepository.findUsersByUserId(id);
+        Integer addQuantity = cartService.addQuantityProduct(productId,user,quantity);
+        return addQuantity + " products is added";
+    }
+    @PostMapping(path = "/remove/{uid}/{pid}/{qty}")
+    public String removeProductToCart(@PathVariable("uid") Long id,
+                                   @PathVariable("pid") Long productId,
+                                   @PathVariable("qty") Integer quantity){
+        User user = userRepository.findUsersByUserId(id);
+        Integer addQuantity = cartService.removeQuantityProduct(productId,user,quantity);
+        return addQuantity + " products is remove";
+    }
+    @PostMapping(path = "/remove/{uid}/{pid}")
+    public String removeProductFromCart(@PathVariable("uid") Long id,
+                                        @PathVariable("pid") Long productId){
+        cartService.removeProduct(productId,id);
+        return "The product has been delete";
     }
 }
