@@ -13,13 +13,13 @@ import java.util.Optional;
 @Transactional(readOnly= true)
 public interface ProductRepository extends JpaRepository<Product,Long> {
 
-    @Query("SELECT p FROM Product p where p.productName =?1")
+    @Query("SELECT p FROM Product p where lower(p.productName) LIKE %?1%")
     Optional<Product> findProductByProductName(String productName);
 
-    @Query("SELECT p FROM Product p where p.productId =?1")
+    @Query("SELECT p FROM Product p where lower(p.productId) LIKE %?1%")
     Optional<Product> findProductByProductId(Long productId);
 
-    @Query("SELECT p FROM Product p WHERE CONCAT(p.productName, ' ', p.brand, ' ', p.type, ' ', p.price) LIKE %?1%")
+    @Query("SELECT p FROM Product p WHERE lower(CONCAT(p.productName, ' ', p.brand, ' ', p.type, ' ', p.price)) LIKE %?1%")
     List<Product> search(String keyword);
 
     List<Product> findAllByOrderByPriceAsc();

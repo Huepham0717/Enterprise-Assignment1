@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @CrossOrigin
@@ -28,7 +29,7 @@ public class ProductController {
 
     @GetMapping(path = "search")
     public List<Product> searchProduct(@RequestParam("keyword") String keyword){
-        return productService.searchProduct(keyword);
+        return productService.searchProduct(keyword.toLowerCase());
     }
 
     @PostMapping
