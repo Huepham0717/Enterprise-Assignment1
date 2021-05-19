@@ -32,4 +32,10 @@ public class CartController {
     public List<Cart> listCart(@PathVariable("userId") Long id){
         return cartService.listCart(id);
     }
+    @PutMapping(path = "{cartId}")
+    public String updateAmountInTheCart(@PathVariable("cartId") Long cartId,
+                                        @RequestParam(required = false) float amount){
+        return cartService.updateAmountInTheCart(cartId,amount);
+
+    }
 }

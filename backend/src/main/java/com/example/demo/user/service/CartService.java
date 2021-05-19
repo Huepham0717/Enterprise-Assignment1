@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -26,5 +27,15 @@ public class CartService {
         User user= userRepository.findUsersByUserId(id);
         System.out.println("listCart");
         return cartRepository.findCartByUser(user);
+    }
+    @Transactional
+    public String updateAmountInTheCart(Long cartId, float amount){
+        Cart cart = cartRepository.findById(cartId).orElseThrow(()-> new IllegalStateException(
+                "Cart with id "+cartId+" does not exists"
+        ));
+        if(!Objects.equals(cart.getAmount(),amount)){
+            cart.setAmount(amount);
+        }
+        return "{ \"message\": \"Cart successfully updated.\" }";
     }
 }
