@@ -1,3 +1,5 @@
+// creat the seach function for the search button 
+
 function openSearch() {
     document.getElementById("myOverlay").style.display = "block";
 }
