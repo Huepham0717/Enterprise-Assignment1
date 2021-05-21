@@ -1,0 +1,28 @@
+GET http://localhost:8080/api/v1/product
+Content-Type: application/json
+
+<> 2021-05-07T010955.200.html
+
+###
+
+GET http://localhost:8080/api/v1/product
+Content-Type: application/json
+
+<> 2021-05-07T010929.200.html
+
+###
+
+GET http://localhost:8080/api/v1/product
+
+<> 2021-05-07T010854.200.html
+
+###
+
+GET http://api/v1/product
+
+###
+
+GET http://api/v1/product
+
+###
+
