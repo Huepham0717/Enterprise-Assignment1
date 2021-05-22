@@ -1,3 +1,4 @@
+// creat the seach function for the search button 
 function openSearch() {
     document.getElementById("myOverlay").style.display = "block";
 }
@@ -5,7 +6,7 @@ function openSearch() {
 function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
 }
-// Modal
+// create Modal
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("cart");
 var close = document.getElementsByClassName("close")[0];
