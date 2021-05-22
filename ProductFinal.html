@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jque ry-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="product.css" rel="stylesheet" type="text/css"/>  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <body>
+<!-------------------------------Navigation Bar------------------------------->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item"><a class="nav-link underlineHover" href="#">Discover</a></li>
+              <li class="nav-item"><a class="nav-link underlineHover" href="#">Shop</a></li>
+              <li class="nav-item"><a class="nav-link underlineHover" href="#">Contact</a></li>
+          </ul>
+      </div>
+
+      <div id="myOverlay" class="overlay">
+          <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+          <div class="overlay-content">
+              <form action="/action_page.php">
+                  <input type="text" placeholder="Search.." name="search">
+
+              </form>
+          </div>
+      </div>
+      <button class="openBtn bg-dark " onclick="openSearch()"><i class="fa fa-search"></i></button>
+
+      <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+      <button class="cartBtn bg-dark"><i class="fa fa-shopping-cart"></i></button>
+    </nav>
+<!-------------------------------Img and Items------------------------------->
+    <div class="container mt-5">
+        <div class="row"></div>
+    </div>
+    <div class="container item-container">
+      <div class="row ">
+        <div class="col-md-6">
+          <div id="itemImage" class="Image">
+<!-------------------------------Content------------------------------->
+            <img src="item1.png" class="d-block w-50"> 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="name-row">
+            <h2>Black Beat</h2>
+          </div>
+          <div class="brand-row">
+            <h6>
+              <soft style="color:orange;">Apple</soft>
+            </h6>
+          </div>
+          <div class="price-row">
+            <h1>
+              <i class="fas fa-dollar-sign">499$</i>&nbsp; &nbsp; <h3><del>699$</del> &nbsp; &nbsp;</h3>
+            </h1>
+          </div>
+          <div class="warranty-row">
+            <h6 >12 months guaranteed</h6>
+            <div class="stock-row">
+              <h6>
+                <p style="font-size: smaller;">69420 available</p>
+              </h6>
+            </div>
+          </div>
+          <div class="Description">
+            <p>Allahu akbar</p>
+          </div>
+          <div class="buy-row">
+            <a href="#" class="btn btn-primary btn-lg" style="display:grid;" style="display: grid;
+            backdrop-filter: drop-shadow(2px 4px 6px black); margin-top: 50px;">Buy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-5">
+        <div class="Related mb-5" style="margin-top: 100px;">
+          <h1>Related Items</h1>
+        </div>
+      </div>
+<!-------------------------------Related Items------------------------------->
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <div class="row">
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" 
+                          alt="First slide" 
+                          style="margin: 50px;border-radius: 10px;background:#fff;  float:left;background: #fff;">
+                  </a>               
+                 </div> 
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat Red.png" 
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>                
+                </div>
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" 
+                          alt="First slide" 
+                          style="margin: 50px; 
+                                 border-radius: 10px; 
+                                 border: 1px  #ccc; 
+                                 background:#fff; 
+                                 float:left;"> 
+                  </a>                
+                </div>
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat Black.png" 
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>                
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-3">
+                <a href="#">
+                  <img 
+                        class="d-block w-50 mr-5" 
+                        src="Beat White.png" 
+                        alt="First slide" 
+                        style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                </a>
+              </div>
+              <div class="col-3">
+                <a href="#">
+                  <img 
+                        class="d-block w-50 mr-5" 
+                        src="Beat Red.png" 
+                        alt="First slide" 
+                        style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                </a>              
+              </div>
+              <div class="col-3">
+                <a href="#">
+                  <img 
+                        class="d-block w-50 mr-5" 
+                        src="Beat Black.png" 
+                        alt="First slide" 
+                        style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                </a>             
+              </div>
+              <div class="col-3">
+                <a href="#">
+                  <img 
+                        class="d-block w-50 mr-5" 
+                        src="Beat White.png" 
+                        alt="First slide" 
+                        style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                </a>              
+              </div>
+            </div>
+          </div>
+        </div> 
+    <!-------------------------------End Related Items------------------------------->
+
+    <!-------------------------------Most Viewed Items------------------------------->
+        <div class="col-md-6 mt-5">
+          <div class="Related mb-5">
+            <h1>Most Viewed</h1>
+          </div>
+        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                  <div class="col-3">
+                    <a href="#">
+                      <img 
+                            class="d-block w-50 mr-5"
+                            src="Beat White.png"
+                            alt="First slide"
+                            style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                    </a>               
+                   </div>
+                  <div class="col-3">
+                    <a href="#">
+                      <img 
+                            class="d-block w-50 mr-5" 
+                            src="Beat White.png" 
+                            alt="First slide" 
+                            style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                    </a>                
+                  </div>
+                  <div class="col-3">
+                    <a href="#">
+                      <img 
+                            class="d-block w-50 mr-5" 
+                            src="Beat White.png" 
+                            alt="First slide" 
+                            style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                    </a>                
+                  </div>
+                  <div class="col-3">
+                    <a href="#">
+                      <img 
+                            class="d-block w-50 mr-5" 
+                            src="Beat White.png" 
+                            alt="First slide" 
+                            style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                    </a>                
+                  </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-3"> 
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" 
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" 
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>              
+                </div>
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" 
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>             
+                </div>
+                <div class="col-3">
+                  <a href="#">
+                    <img 
+                          class="d-block w-50 mr-5" 
+                          src="Beat White.png" a
+                          alt="First slide" 
+                          style="margin: 50px; border-radius: 10px; border: 1px  #ccc; background:#fff; float:left;">
+                  </a>              
+                </div>
+              </div>
+            </div>   
+          </div> 
+        </div>
+      </div>
+    </div>
+  <!-------------------------------End Most Viewed Items------------------------------->
+
+  <!-------------------------------Footer------------------------------->
+  <div class="page-footer bg-dark">
+    <div class="container text-center text-md-left mt-5">
+      <div class="row">
+        <div class="col-md-3 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold mt-4" style="color: white;">Group 8</h6>
+        </div>
+        <div class="col-md-2 mx-auto mb-4">
+          <h6 class="text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Product</h6>
+          <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px"> 
+          <ul class="list-unstyled">
+            <li class="my-2"> <a href="#" style="Color:White; text-decoration: none;">Laptop</a></li>
+            <li class="my-2"> <a href="#" style="Color:White; text-decoration: none;">Phones</a></li>
+            <li class="my-2"> <a href="#" style="Color:White; text-decoration: none;">Tablet</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-------------------------------End Footer------------------------------->
+
+  </body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
