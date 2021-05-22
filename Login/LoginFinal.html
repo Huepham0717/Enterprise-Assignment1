@@ -6,7 +6,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="LoginFinal.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,6 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0.0;
+        font-family: 'Poppins', sans-serif;
+    }
+    
     .navbar-collapse a {
         font-size: 30px;
     }
@@ -76,10 +83,17 @@
         float: center;
         width: 80%;
         background: white;
+        text-align: left;
     }
     
     .overlay input[type=text]:hover {
-        background: #f1f1f1;
+        background: #fff;
+        outline: none;
+    }
+    
+    .overlay input[type=text]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #fff;
     }
     
     .userBtn {
@@ -118,40 +132,37 @@
         font-size: 150%;
     }
     
-    li.dropdown {
+    .dropdown {
+        position: relative;
         display: inline-block;
     }
     
     .dropdown-content {
         display: none;
-        margin-top: 20%;
-        margin-left: -44px;
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
+        margin-left: -44px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
     
     .dropdown-content a {
         color: black;
-        padding: 20px 16px;
+        padding: 10px 10px;
         text-decoration: none;
         display: block;
-        text-align: left;
+        text-align: middle;
     }
     
     .dropdown-content a:hover {
-        background-color: #f1f1f1;
+        background-color: #A9A9A9;
+        color: white;
     }
     
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    /* .navbar-collapse li :hover {
-        border-bottom: black;
-        border-bottom: 2px solid aqua;
-    } */
     
     @import url('https://fonts.googleapis.com/css?family=Poppins');
     /* BASIC */
@@ -170,8 +181,9 @@
     a {
         color: #92badd;
         display: inline-block;
-        text-decoration: none;
         font-weight: 400;
+        font-size: 1rem;
+        text-decoration: none;
     }
     
     h2 {
@@ -181,7 +193,8 @@
         text-transform: uppercase;
         display: inline-block;
         margin: 40px 8px 10px 8px;
-        color: #cccccc;
+        color: #e2d5d5;
+        text-decoration: none;
     }
     /* STRUCTURE */
     
@@ -223,6 +236,7 @@
         border-radius: 0 0 10px 10px;
     }
     /* TABS */
+    /* TABS */
     
     .h2 {
         margin-bottom: 80px;
@@ -237,10 +251,12 @@
     }
     
     h2.inactive {
+        font-size: 20px;
         color: #cccccc;
     }
     
     h2.active {
+        font-size: 20px;
         color: #0d0d0d;
         border-bottom: 2px solid #5fbae9;
     }
@@ -286,7 +302,8 @@
         transform: scale(0.95);
     }
     
-    input[type=text] {
+    input[type=text],
+    input[type=password] {
         background-color: #f6f6f6;
         border: none;
         color: #0d0d0d;
@@ -307,11 +324,17 @@
         border-radius: 5px 5px 5px 5px;
     }
     
-    input[type=text] {
+    input[type=text],
+    input[type=password] {
         width: 70%;
     }
     
     input[type=text]:focus {
+        background-color: rgb(230, 220, 220);
+        border-bottom: 2px solid #5fbae9;
+    }
+    
+    input[type=password]:focus {
         background-color: #fff;
         border-bottom: 2px solid #5fbae9;
     }
@@ -495,25 +518,24 @@
         </div>
         <button class="openBtn bg-dark " onclick="openSearch()"><i class="fa fa-search"></i></button>
 
-        <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
-        <button class="cartBtn bg-dark"><i class="fa fa-shopping-cart"></i></button>
+        <button onclick="location.href='loginFinal'" class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+        <button onclick="myFunctionlogin()" class="cartBtn bg-dark"><i class="fa fa-shopping-cart"></i></button>
     </nav>
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
             <div class="h2">
                 <div>
-                    <h2 class="active"> Sign In </h2>
+                    <a href="LoginFinal.html">
+                        <h2 class="active"> Sign In </h2>
+                    </a>
                 </div>
                 <div>
-                    <h2 class="inactive underlineHover">Sign Up </h2>
+                    <a href="RegisterFormFinal.html">
+                        <h2 class="inactive underlineHover">Sign Up </h2>
+                    </a>
                 </div>
             </div>
-
-
-
-
-
             <!-- Login Form -->
             <form>
                 <input type="text" id="login" class="fadeIn second" name="login" placeholder="User ID">
@@ -521,13 +543,35 @@
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
 
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
         </div>
     </div>
+    <div class="page-footer bg-dark">
+        <div class="container text-center text-md-left mt-5">
+            <div class="row">
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4" style="color: white; display:flex; align-items: center;justify-content: center;">Group 8</h6>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Discover</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Shop</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                    <ul class="list-unstyled">
+                        <li class="Laptop my-2"> <a href="headphone.html" style="Color:White; text-decoration: none;">Headphones</a></li>
+                        <li class="Phones my-2"> <a href="phone.html" style="Color:White; text-decoration: none;">Phones</a></li>
+                        <li class="Tabletmy-2"> <a href="tablet.html" style="Color:White; text-decoration: none;">Tablet</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Contact</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script>
     function openSearch() {
@@ -536,6 +580,10 @@
 
     function closeSearch() {
         document.getElementById("myOverlay").style.display = "none";
+    }
+
+    function myFunctionlogin() {
+        alert("Please login or register!");
     }
 </script>
 
