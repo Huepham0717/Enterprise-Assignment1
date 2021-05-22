@@ -1,6 +1,7 @@
 package com.example.demo.user.service;
 
 import com.example.demo.user.entity.Product;
+import com.example.demo.user.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

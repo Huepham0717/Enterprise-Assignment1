@@ -2,6 +2,7 @@ package com.example.demo.user.service;
 
 import com.example.demo.user.entity.User;
 import com.example.demo.user.entity.token.ConfirmationToken;
+import com.example.demo.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

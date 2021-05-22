@@ -1,6 +1,6 @@
 package com.example.demo.user.service;
 
-import com.example.demo.user.entity.RegistrationRequest;
+import com.example.demo.user.dto.RegistrationRequest;
 import com.example.demo.user.entity.User;
 import com.example.demo.user.entity.UserRole;
 import com.example.demo.user.entity.token.ConfirmationToken;

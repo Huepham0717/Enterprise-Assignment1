@@ -2,6 +2,8 @@ package com.example.demo.user.service;
 
 import com.example.demo.user.entity.Cart;
 import com.example.demo.user.entity.User;
+import com.example.demo.user.repository.CartRepository;
+import com.example.demo.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

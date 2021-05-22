@@ -1,6 +1,6 @@
 package com.example.demo.user.controller;
 
-import com.example.demo.user.entity.RegistrationRequest;
+import com.example.demo.user.dto.RegistrationRequest;
 import com.example.demo.user.service.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

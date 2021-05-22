@@ -1,4 +1,4 @@
-package com.example.demo.user.service;
+package com.example.demo.user.repository;
 
 
 import com.example.demo.user.entity.Cart;

@@ -1,14 +1,12 @@
 package com.example.demo.user.controller;
 
 import com.example.demo.user.entity.Product;
-import com.example.demo.user.service.ProductRepository;
+import com.example.demo.user.repository.ProductRepository;
 import com.example.demo.user.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 @CrossOrigin

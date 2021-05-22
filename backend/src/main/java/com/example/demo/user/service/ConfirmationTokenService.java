@@ -1,6 +1,7 @@
 package com.example.demo.user.service;
 
 import com.example.demo.user.entity.token.ConfirmationToken;
+import com.example.demo.user.repository.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.example.demo.user.controller;
 
-import com.example.demo.user.entity.LoginRequest;
+import com.example.demo.user.dto.LoginRequest;
 import com.example.demo.user.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

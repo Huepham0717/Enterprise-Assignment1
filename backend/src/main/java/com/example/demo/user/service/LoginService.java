@@ -1,6 +1,6 @@
 package com.example.demo.user.service;
 
-import com.example.demo.user.entity.LoginRequest;
+import com.example.demo.user.dto.LoginRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
