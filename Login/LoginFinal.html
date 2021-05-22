@@ -6,14 +6,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="LoginFinal.css" type="text/css">
+    <!-- <link rel="stylesheet" href="LoginFinal.css" type="text/css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
@@ -22,11 +29,11 @@
         padding: 0.0;
         font-family: 'Poppins', sans-serif;
     }
-    
+
     .navbar-collapse a {
         font-size: 30px;
     }
-    
+
     .openBtn {
         margin-left: 20%;
         border: none;
@@ -36,12 +43,12 @@
         cursor: pointer;
         color: white;
     }
-    
+
     .openBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-    
+
     .overlay {
         height: 100%;
         width: 100%;
@@ -53,7 +60,7 @@
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.9);
     }
-    
+
     .overlay-content {
         position: relative;
         top: 3%;
@@ -62,7 +69,7 @@
         margin-top: 30px;
         margin: auto;
     }
-    
+
     .overlay .closebtn {
         position: absolute;
         margin-right: 0px;
@@ -71,11 +78,11 @@
         cursor: pointer;
         color: white;
     }
-    
+
     .overlay .closebtn:hover {
         color: #ccc;
     }
-    
+
     .overlay input[type=text] {
         padding: 16px;
         font-size: 20px;
@@ -85,17 +92,17 @@
         background: white;
         text-align: left;
     }
-    
+
     .overlay input[type=text]:hover {
         background: #fff;
         outline: none;
     }
-    
+
     .overlay input[type=text]:focus {
         background-color: #fff;
         border-bottom: 2px solid #fff;
     }
-    
+
     .userBtn {
         margin-left: 2%;
         border: none;
@@ -104,12 +111,12 @@
         cursor: pointer;
         color: white;
     }
-    
+
     .userBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-    
+
     .cartBtn {
         margin-left: 2%;
         border: none;
@@ -118,25 +125,25 @@
         cursor: pointer;
         color: white;
     }
-    
+
     .cartBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-    
+
     .navbar-nav {
         margin-left: 40%;
     }
-    
+
     .navbar-nav a {
         font-size: 150%;
     }
-    
+
     .dropdown {
         position: relative;
         display: inline-block;
     }
-    
+
     .dropdown-content {
         display: none;
         position: absolute;
@@ -146,7 +153,7 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
-    
+
     .dropdown-content a {
         color: black;
         padding: 10px 10px;
@@ -154,30 +161,30 @@
         display: block;
         text-align: middle;
     }
-    
+
     .dropdown-content a:hover {
         background-color: #A9A9A9;
         color: white;
     }
-    
+
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    
+
     @import url('https://fonts.googleapis.com/css?family=Poppins');
     /* BASIC */
-    
+
     html {
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-color: whitesmoke;
     }
-    
+
     body {
         font-family: "Poppins", sans-serif;
         height: 100vh;
     }
-    
+
     a {
         color: #92badd;
         display: inline-block;
@@ -185,7 +192,7 @@
         font-size: 1rem;
         text-decoration: none;
     }
-    
+
     h2 {
         text-align: center;
         font-size: 16px;
@@ -196,8 +203,9 @@
         color: #e2d5d5;
         text-decoration: none;
     }
+
     /* STRUCTURE */
-    
+
     .wrapper {
         display: flex;
         align-items: center;
@@ -208,7 +216,7 @@
         padding: 20px;
         background-color: whitesmoke;
     }
-    
+
     #formContent {
         -webkit-border-radius: 10px 10px 10px 10px;
         border-radius: 10px 10px 10px 10px;
@@ -226,7 +234,7 @@
         box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
         text-align: center;
     }
-    
+
     #formFooter {
         background-color: #f6f6f6;
         border-top: 1px solid #dce8f1;
@@ -235,13 +243,14 @@
         -webkit-border-radius: 0 0 10px 10px;
         border-radius: 0 0 10px 10px;
     }
+
     /* TABS */
     /* TABS */
-    
+
     .h2 {
         margin-bottom: 80px;
     }
-    
+
     .h2 div {
         display: block;
         padding: 14px 16px;
@@ -249,19 +258,20 @@
         margin-left: 10px;
         margin-right: 150px;
     }
-    
+
     h2.inactive {
         font-size: 20px;
         color: #cccccc;
     }
-    
+
     h2.active {
         font-size: 20px;
         color: #0d0d0d;
         border-bottom: 2px solid #5fbae9;
     }
+
     /* FORM TYPOGRAPHY*/
-    
+
     input[type=button],
     input[type=submit],
     input[type=reset] {
@@ -285,13 +295,13 @@
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-    
+
     input[type=button]:hover,
     input[type=submit]:hover,
     input[type=reset]:hover {
         background-color: #39ace7;
     }
-    
+
     input[type=button]:active,
     input[type=submit]:active,
     input[type=reset]:active {
@@ -301,7 +311,7 @@
         -ms-transform: scale(0.95);
         transform: scale(0.95);
     }
-    
+
     input[type=text],
     input[type=password] {
         background-color: #f6f6f6;
@@ -323,28 +333,29 @@
         -webkit-border-radius: 5px 5px 5px 5px;
         border-radius: 5px 5px 5px 5px;
     }
-    
+
     input[type=text],
     input[type=password] {
         width: 70%;
     }
-    
+
     input[type=text]:focus {
         background-color: rgb(230, 220, 220);
         border-bottom: 2px solid #5fbae9;
     }
-    
+
     input[type=password]:focus {
         background-color: #fff;
         border-bottom: 2px solid #5fbae9;
     }
-    
+
     input[type=text]:placeholder {
         color: #cccccc;
     }
+
     /* ANIMATIONS */
     /* Simple CSS3 Fade-in-down Animation */
-    
+
     .fadeInDown {
         -webkit-animation-name: fadeInDown;
         animation-name: fadeInDown;
@@ -353,61 +364,67 @@
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
-    
+
     @-webkit-keyframes fadeInDown {
         0% {
             opacity: 0;
             -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
         }
+
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
-    
+
     @keyframes fadeInDown {
         0% {
             opacity: 0;
             -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
         }
+
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
+
     /* Simple CSS3 Fade-in Animation */
-    
+
     @-webkit-keyframes fadeIn {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
     }
-    
+
     @-moz-keyframes fadeIn {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
     }
-    
+
     @keyframes fadeIn {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
     }
-    
+
     .fadeIn {
         opacity: 0;
         -webkit-animation: fadeIn ease-in 1;
@@ -420,35 +437,36 @@
         -moz-animation-duration: 1s;
         animation-duration: 1s;
     }
-    
+
     .fadeIn.first {
         -webkit-animation-delay: 0.4s;
         -moz-animation-delay: 0.4s;
         animation-delay: 0.4s;
     }
-    
+
     .fadeIn.second {
         -webkit-animation-delay: 0.6s;
         -moz-animation-delay: 0.6s;
         animation-delay: 0.6s;
         margin-bottom: 20px;
     }
-    
+
     .fadeIn.third {
         -webkit-animation-delay: 0.8s;
         -moz-animation-delay: 0.8s;
         animation-delay: 0.8s;
         margin-bottom: 20px;
     }
-    
+
     .fadeIn.fourth {
         -webkit-animation-delay: 1s;
         -moz-animation-delay: 1s;
         animation-delay: 1s;
         margin-bottom: 20px;
     }
+
     /* Simple CSS3 Fade-in Animation */
-    
+
     .underlineHover:after {
         display: block;
         left: 0;
@@ -459,27 +477,37 @@
         content: "";
         transition: width 0.2s;
     }
-    
+
     .underlineHover:hover {
         color: #0d0d0d;
         text-decoration: none;
     }
-    
+
     .underlineHover:hover:after {
         width: 100%;
     }
+
     /* OTHERS */
-    
+
     *:focus {
         outline: none;
     }
-    
+
     #icon {
         width: 60%;
     }
-    
+
     * {
         box-sizing: border-box;
+    }
+
+    #formFooter {
+        background-color: #f6f6f6;
+        border-top: 1px solid #dce8f1;
+        padding: 25px;
+        text-align: center;
+        -webkit-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
     }
 </style>
 
@@ -490,7 +518,8 @@
     then Bootstrap JS -->
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span
+                class="navbar-toggler-icon"></span></button>
         <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -518,7 +547,8 @@
         </div>
         <button class="openBtn bg-dark " onclick="openSearch()"><i class="fa fa-search"></i></button>
 
-        <button onclick="location.href='loginFinal'" class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+        <button onclick="location.href='loginFinal.html'" class="userBtn bg-dark"><i
+                class="fa fa-user-circle"></i></button>
         <button onclick="myFunctionlogin()" class="cartBtn bg-dark"><i class="fa fa-shopping-cart"></i></button>
     </nav>
     <div class="wrapper fadeInDown">
@@ -538,9 +568,16 @@
             </div>
             <!-- Login Form -->
             <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="User ID">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <!-- <input type="text" id="userName" class="fadeIn second" name="login" placeholder="Username"> -->
+                <input type="text" id="userName" class="fadeIn second" placeholder="Username">
+
+                <!-- <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password"> -->
+                <input type="password" id="password" class="fadeIn third" placeholder="Password">
+
+                <!-- <input onclick="sendRequest()" type="submit" class="fadeIn fourth" value="Log In" href="#"> -->
+                <div id="formFooter">
+                    <a onclick="sendRequest()" class="underlineHover" href="#">Sign In</a>
+                </div>
             </form>
 
         </div>
@@ -549,23 +586,30 @@
         <div class="container text-center text-md-left mt-5">
             <div class="row">
                 <div class="col-md-3 mx-auto mb-4">
-                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4" style="color: white; display:flex; align-items: center;justify-content: center;">Group 8</h6>
+                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4"
+                        style="color: white; display:flex; align-items: center;justify-content: center;">Group 8</h6>
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Discover</h6>
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
+                        style="width:85px; height: 2px; color:White">Discover</h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Shop</h6>
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
+                        style="width:85px; height: 2px; color:White">Shop</h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                     <ul class="list-unstyled">
-                        <li class="Laptop my-2"> <a href="headphone.html" style="Color:White; text-decoration: none;">Headphones</a></li>
-                        <li class="Phones my-2"> <a href="phone.html" style="Color:White; text-decoration: none;">Phones</a></li>
-                        <li class="Tabletmy-2"> <a href="tablet.html" style="Color:White; text-decoration: none;">Tablet</a></li>
+                        <li class="Laptop my-2"> <a href="headphone.html"
+                                style="Color:White; text-decoration: none;">Headphones</a></li>
+                        <li class="Phones my-2"> <a href="phone.html"
+                                style="Color:White; text-decoration: none;">Phones</a></li>
+                        <li class="Tabletmy-2"> <a href="tablet.html"
+                                style="Color:White; text-decoration: none;">Tablet</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White">Contact</h6>
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
+                        style="width:85px; height: 2px; color:White">Contact</h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                 </div>
             </div>
@@ -584,6 +628,44 @@
 
     function myFunctionlogin() {
         alert("Please login or register!");
+    }
+
+    function sendRequest() {
+
+        var userName = document.getElementById("userName").value;
+        var passWord = document.getElementById("password").value;
+
+        fetch('http://localhost:8080/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                userName: userName,
+                password: passWord
+            })
+        })
+
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                if (data.message == "Access Denied") {
+                    alert("Username or Password incorrect. Please try again.");
+                    // window.location = 'login1.html';
+                }
+                else {
+                    alert(data.message);
+                    document.cookie = "username=".concat(userName);
+                    console.log(document.cookie);
+                    // window.location = 'user.html';
+                }
+            })
+
+            .catch(err => {
+                alert("Username or Password incorrect. Please try again.");
+                console.log(err);
+
+            })
     }
 </script>
 
