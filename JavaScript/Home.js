@@ -1,3 +1,4 @@
+// creat the seach function for the search button 
 function openSearch() {
     document.getElementById("myOverlay").style.display = "block";
 }
@@ -5,7 +6,7 @@ function openSearch() {
 function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
 }
-// Modal
+// create Modal
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("cart");
 var close = document.getElementsByClassName("close")[0];
@@ -13,28 +14,28 @@ var close = document.getElementsByClassName("close")[0];
 
 var close_footer = document.getElementsByClassName("close-footer")[0];
 var order = document.getElementsByClassName("order")[0];
-btn.onclick = function () {
+btn.onclick = function() {
     modal.style.display = "block";
 }
-close.onclick = function () {
+close.onclick = function() {
     modal.style.display = "none";
 }
-close_footer.onclick = function () {
+close_footer.onclick = function() {
     modal.style.display = "none";
 }
-order.onclick = function () {
+order.onclick = function() {
     alert("Thank yoy for your order")
 }
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
-}
-// delete cart
+    // delete cart
 var remove_cart = document.getElementsByClassName("btn-danger");
 for (var i = 0; i < remove_cart.length; i++) {
     var button = remove_cart[i]
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function() {
         var button_remove = event.target
         button_remove.parentElement.parentElement.remove()
         updatecart()
@@ -44,7 +45,7 @@ for (var i = 0; i < remove_cart.length; i++) {
 var quantity_input = document.getElementsByClassName("cart-quantity-input");
 for (var i = 0; i < quantity_input.length; i++) {
     var input = quantity_input[i];
-    input.addEventListener("change", function (event) {
+    input.addEventListener("change", function(event) {
         var input = event.target
         if (isNaN(input.value) || input.value <= 0) {
             input.value = 1;
@@ -57,7 +58,7 @@ for (var i = 0; i < quantity_input.length; i++) {
 var add_cart = document.getElementsByClassName("btn-cart");
 for (var i = 0; i < add_cart.length; i++) {
     var add = add_cart[i];
-    add.addEventListener("click", function (event) {
+    add.addEventListener("click", function(event) {
 
         var button = event.target;
         var product = button.parentElement.parentElement;
@@ -65,7 +66,7 @@ for (var i = 0; i < add_cart.length; i++) {
         var title = product.getElementsByClassName("content-product-h3")[0].innerText
         var price = product.getElementsByClassName("price")[0].innerText
         addItemToCart(title, price, img)
-        // when adding product to the the cart, it will show modal
+            // when adding product to the the cart, it will show modal
         modal.style.display = "block";
 
         updatecart()
@@ -86,22 +87,22 @@ function addItemToCart(title, price, img) {
 
     var cartRowContents = `
 <div class="cart-item cart-column">
-  <img class="cart-item-image" src="${img}" width="150" height="110">
-  <span class="cart-item-title">${title}</span>
+<img class="cart-item-image" src="${img}" width="150" height="110">
+<span class="cart-item-title">${title}</span>
 </div>
 <span class="cart-price cart-column">${price}</span>
 <div class="cart-quantity cart-column">
-  <input class="cart-quantity-input" type="number" value="1">
-  <button class="btn btn-danger" type="button">Remove</button>
+<input class="cart-quantity-input" type="number" value="1">
+<button class="btn btn-danger" type="button">Remove</button>
 </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
-    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function() {
         var button_remove = event.target
         button_remove.parentElement.parentElement.remove()
         updatecart()
     })
-    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function(event) {
         var input = event.target
         if (isNaN(input.value) || input.value <= 0) {
             input.value = 1;
@@ -127,7 +128,7 @@ function updatecart() {
 
 // menu mobile
 var btn_menu = document.getElementById("btnmenu");
-btn_menu.addEventListener("click", function () {
+btn_menu.addEventListener("click", function() {
     var item_menu = document.getElementById("menutop");
     if (item_menu.style.display === "block") {
         item_menu.style.display = "none";
@@ -135,16 +136,3 @@ btn_menu.addEventListener("click", function () {
         item_menu.style.display = "block";
     }
 })
-
-function getProducts() {
-    fetch('http://localhost:8080/product/search?keyword=', {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            userName: userName,
-            password: passWord
-        })
-    })
-}

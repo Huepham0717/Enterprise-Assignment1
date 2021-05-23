@@ -9,18 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
@@ -29,11 +22,11 @@
         padding: 0.0;
         font-family: 'Poppins', sans-serif;
     }
-
+    
     .navbar-collapse a {
         font-size: 30px;
     }
-
+    
     .openBtn {
         margin-left: 20%;
         border: none;
@@ -43,12 +36,12 @@
         cursor: pointer;
         color: white;
     }
-
+    
     .openBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-
+    
     .overlay {
         height: 100%;
         width: 100%;
@@ -60,7 +53,7 @@
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.9);
     }
-
+    
     .overlay-content {
         position: relative;
         top: 3%;
@@ -69,7 +62,7 @@
         margin-top: 30px;
         margin: auto;
     }
-
+    
     .overlay .closebtn {
         position: absolute;
         margin-right: 0px;
@@ -78,32 +71,32 @@
         cursor: pointer;
         color: white;
     }
-
+    
     .overlay .closebtn:hover {
         color: #ccc;
     }
-
-    .overlay input[type="text"] {
+    
+    .overlay input[type=text] {
         padding: 16px;
         font-size: 20px;
         border-radius: 12px;
         float: center;
         width: 80%;
-        height: 55px;
         background: white;
         text-align: left;
-        margin-top: 0px;
+        height: 55px;
     }
-
-    .overlay input[type="text"]:hover {
-        background-color: #ffff;
+    
+    .overlay input[type=text]:hover {
+        background: #fff;
+        outline: none;
     }
-
+    
     .overlay input[type=text]:focus {
         background-color: #fff;
-        border-bottom: 2px solid #ffffff;
+        border-bottom: 2px solid #fff;
     }
-
+    
     .userBtn {
         margin-left: 2%;
         border: none;
@@ -112,12 +105,12 @@
         cursor: pointer;
         color: white;
     }
-
+    
     .userBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-
+    
     .cartBtn {
         margin-left: 2%;
         border: none;
@@ -126,77 +119,77 @@
         cursor: pointer;
         color: white;
     }
-
+    
     .cartBtn:hover {
         font-weight: bold;
         border-bottom: 2px solid aqua;
     }
-
+    
     .navbar-nav {
         margin-left: 40%;
     }
-
+    
     .navbar-nav a {
         font-size: 150%;
     }
-
+    
     li.dropdown {
         display: inline-block;
     }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
+    
     .dropdown-content {
         display: none;
+        margin-top: 20%;
+        margin-left: -44px;
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        margin-left: -44px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
-
+    
     .dropdown-content a {
         color: black;
-        padding: 10px 10px;
+        padding: 20px 16px;
         text-decoration: none;
         display: block;
-        text-align: middle;
+        text-align: left;
     }
-
+    
     .dropdown-content a:hover {
-        background-color: #A9A9A9;
-        color: white;
+        background-color: #f1f1f1;
     }
-
+    
     .dropdown:hover .dropdown-content {
         display: block;
     }
-
+    /* .navbar-collapse li :hover {
+    border-bottom: black;
+    border-bottom: 2px solid aqua;
+} */
+    
     @import url('https://fonts.googleapis.com/css?family=Poppins');
     /* BASIC */
-
+    
     html {
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-color: white;
+        background-color: whitesmoke;
     }
-
+    
     body {
         font-family: "Poppins", sans-serif;
         height: 100vh;
     }
-
+    
     a {
         color: #92badd;
         display: inline-block;
-        text-decoration: none;
         font-weight: 400;
+        font-size: 1rem;
+        text-decoration: none;
     }
-
+    
     h2 {
         text-align: center;
         font-size: 16px;
@@ -204,11 +197,11 @@
         text-transform: uppercase;
         display: inline-block;
         margin: 40px 8px 10px 8px;
-        color: #cccccc;
+        color: #e2d5d5;
+        text-decoration: none;
     }
-
     /* STRUCTURE */
-
+    
     .wrapper {
         display: flex;
         align-items: center;
@@ -217,21 +210,27 @@
         width: 100%;
         min-height: 100%;
         padding: 20px;
+        background-color: whitesmoke;
     }
-
+    
     #formContent {
         -webkit-border-radius: 10px 10px 10px 10px;
         border-radius: 10px 10px 10px 10px;
         background: #fff;
+        margin-top: 40px;
         padding: 30px;
         width: 90%;
         max-width: 700px;
-        padding: 0px;
+        max-height: 900px;
+        padding-top: 40px;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-bottom: 0px;
         -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
         box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
         text-align: center;
     }
-
+    
     #formFooter {
         background-color: #f6f6f6;
         border-top: 1px solid #dce8f1;
@@ -240,13 +239,12 @@
         -webkit-border-radius: 0 0 10px 10px;
         border-radius: 0 0 10px 10px;
     }
-
     /* TABS */
-
+    
     .h2 {
         margin-bottom: 80px;
     }
-
+    
     .h2 div {
         display: block;
         padding: 14px 16px;
@@ -254,20 +252,17 @@
         margin-left: 10px;
         margin-right: 150px;
     }
-
+    
     h2.inactive {
-        font-size: 20px;
         color: #cccccc;
     }
-
+    
     h2.active {
-        font-size: 20px;
         color: #0d0d0d;
-        border-bottom: 2px solid #5fbae9;
+        border-bottom: 2px solid #92badd;
     }
-
     /* FORM TYPOGRAPHY*/
-
+    
     input[type=button],
     input[type=submit],
     input[type=reset] {
@@ -291,17 +286,15 @@
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-
+    
     input[type=button]:hover,
     input[type=submit]:hover,
     input[type=reset]:hover {
         background-color: #39ace7;
     }
-
+    
     input[type=button]:active,
     input[type=submit]:active,
-    input[type=date]:active,
-    input[type=password]:active,
     input[type=reset]:active {
         -moz-transform: scale(0.95);
         -webkit-transform: scale(0.95);
@@ -309,10 +302,10 @@
         -ms-transform: scale(0.95);
         transform: scale(0.95);
     }
-
+    
     input[type=text],
-    input[type=date],
-    input[type=password] {
+    input[type=password],
+    input[type=date] {
         background-color: #f6f6f6;
         border: none;
         color: #0d0d0d;
@@ -322,7 +315,7 @@
         display: inline-block;
         font-size: 16px;
         margin: 5px;
-        width: 50%;
+        width: 85%;
         border: 2px solid #f6f6f6;
         -webkit-transition: all 0.5s ease-in-out;
         -moz-transition: all 0.5s ease-in-out;
@@ -332,19 +325,29 @@
         -webkit-border-radius: 5px 5px 5px 5px;
         border-radius: 5px 5px 5px 5px;
     }
-
+    
+    input[type=text],
+    input[type=password],
+    input[type=date] {
+        width: 70%;
+    }
+    
     input[type=text]:focus {
+        background-color: rgb(230, 220, 220);
+        border-bottom: 2px solid #5fbae9;
+    }
+    
+    input[type=password]:focus {
         background-color: #fff;
         border-bottom: 2px solid #5fbae9;
     }
-
+    
     input[type=text]:placeholder {
         color: #cccccc;
     }
-
     /* ANIMATIONS */
     /* Simple CSS3 Fade-in-down Animation */
-
+    
     .fadeInDown {
         -webkit-animation-name: fadeInDown;
         animation-name: fadeInDown;
@@ -353,67 +356,61 @@
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
-
+    
     @-webkit-keyframes fadeInDown {
         0% {
             opacity: 0;
             -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
         }
-
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
-
+    
     @keyframes fadeInDown {
         0% {
             opacity: 0;
             -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
         }
-
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
-
     /* Simple CSS3 Fade-in Animation */
-
+    
     @-webkit-keyframes fadeIn {
         from {
             opacity: 0;
         }
-
         to {
             opacity: 1;
         }
     }
-
+    
     @-moz-keyframes fadeIn {
         from {
             opacity: 0;
         }
-
         to {
             opacity: 1;
         }
     }
-
+    
     @keyframes fadeIn {
         from {
             opacity: 0;
         }
-
         to {
             opacity: 1;
         }
     }
-
+    
     .fadeIn {
         opacity: 0;
         -webkit-animation: fadeIn ease-in 1;
@@ -426,33 +423,35 @@
         -moz-animation-duration: 1s;
         animation-duration: 1s;
     }
-
+    
     .fadeIn.first {
         -webkit-animation-delay: 0.4s;
         -moz-animation-delay: 0.4s;
         animation-delay: 0.4s;
     }
-
+    
     .fadeIn.second {
         -webkit-animation-delay: 0.6s;
         -moz-animation-delay: 0.6s;
         animation-delay: 0.6s;
+        margin-bottom: 20px;
     }
-
+    
     .fadeIn.third {
         -webkit-animation-delay: 0.8s;
         -moz-animation-delay: 0.8s;
         animation-delay: 0.8s;
+        margin-bottom: 20px;
     }
-
+    
     .fadeIn.fourth {
         -webkit-animation-delay: 1s;
         -moz-animation-delay: 1s;
         animation-delay: 1s;
+        margin-bottom: 20px;
     }
-
     /* Simple CSS3 Fade-in Animation */
-
+    
     .underlineHover:after {
         display: block;
         left: 0;
@@ -463,20 +462,36 @@
         content: "";
         transition: width 0.2s;
     }
-
+    
     .underlineHover:hover {
         color: #0d0d0d;
         text-decoration: none;
     }
-
+    
     .underlineHover:hover:after {
         width: 100%;
     }
-
     /* OTHERS */
-
+    
     *:focus {
         outline: none;
+    }
+    
+    #icon {
+        width: 60%;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    h2.inactive {
+        color: #cccccc;
+    }
+    
+    h2.active {
+        color: #0d0d0d;
+        border-bottom: 2px solid #5fbae9;
     }
 </style>
 
@@ -488,10 +503,9 @@
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img src="/Categories/Tablet-images/logo.png" alt="logo"
-                style="width: 70%; padding: 0;" /></a>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <a class="navbar-brand" href="#"><img src="/Categories/Tablet-images/logo.png" alt="logo" style="width: 70%; padding: 0;" /></a>
         <div class="collapse navbar-collapse" style="padding: 0;" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item"><a class="nav-link" href="#">Discover</a></li>
@@ -501,7 +515,7 @@
                     <div class="dropdown-content">
                         <a href="phone.html">Smartphone</a>
                         <a href="tablet.html">Tablet</a>
-                        <a href="headphones.html">Headphones</a>
+                        <a href="headphone.html">Headphone</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -511,121 +525,147 @@
         </div>
 
         <div id="myOverlay" class="overlay">
-            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-            <div class="overlay-content">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search" />
-                </form>
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span
+        >
+        <div class="overlay-content">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search" />
+          </form>
+        </div>
+      </div>
+      <button class="openBtn bg-dark" onclick="openSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+
+      <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+      <button class="cartBtn bg-dark" id="cart">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Shopping cart</h5>
+                <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="cart-row" style="display:flex">
+                <span class="cart-item cart-header cart-column">Product</span>
+                <span class="cart-price cart-header cart-column">Price</span>
+                <span class="cart-quantity cart-header cart-column">Quantity</span>
+            </div>
+            <div class="cart-items">
+
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total:</strong>
+                <span class="cart-total-price">0 USD</span>
             </div>
         </div>
-        <button class="openBtn bg-dark" onclick="openSearch()">
-            <i class="fa fa-search"></i>
-        </button>
-
-        <button onclick class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
-        <button onclick="myFunctionlogin()" class="cartBtn bg-dark" id="cart">
-            <i class="fa fa-shopping-cart"></i>
-        </button>
-
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close-footer">Close</button>
+            <button type="button" class="btn btn-primary order">Payment</button>
+        </div>
+        </div>
+        </div>
     </nav>
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
-            <div class="h2">
-                <div>
-                    <a href="LoginFinal.html">
-                        <h2 class="inactive underlineHover"> Sign In </h2>
-                    </a>
-                </div>
-                <div>
-                    <a href="RegisterFormFinal.html">
-                        <h2 class="active">Sign Up </h2>
-                    </a>
-                </div>
-            </div>
-
             <form action="#">
                 <div class="user-details">
                     <div class="input-box">
                         <label for="" data-placeholder="First name"></label>
-                        <input id="firstName" type="text" placeholder="First name" autocomplete="off"
-                            data-js="form-text" required>
+                        <input type="text" placeholder="First name" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Last name"></label>
-                        <input id="lastName" type="text" placeholder="Last name" autocomplete="off" data-js="form-text"
-                            required>
+                        <input type="text" placeholder="Last name" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
-                        <label for="" data-placeholder="Username"></label>
-                        <input id="userName" type="text" placeholder="Username" autocomplete="off" data-js="form-text"
-                            required>
+                        <label for="" data-placeholder="User name"></label>
+                        <input type="text" placeholder="User name" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Birthday"></label>
-                        <input id="birthday" type="date" placeholder="Birthday" autocomplete="off" data-js="form-text"
-                            required>
+                        <input type="date" placeholder="Birthday" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Email"></label>
-                        <input id="email" type="text" placeholder="name@example.com" autocomplete="off"
-                            data-js="form-text" required>
+                        <input type="text" placeholder="name@example.coml" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Phone number"></label>
-                        <input id="phoneNumber" type="text" placeholder="Phone number" autocomplete="off"
-                            data-js="form-text" required>
+                        <input type="text" placeholder="Phone number" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Password"></label>
-                        <input id="password" type="password" placeholder="Password" autocomplete="off"
-                            data-js="form-text" required>
+                        <input type="password" placeholder="Password" autocomplete="off" data-js="form-text" required>
                     </div>
                     <div class="input-box">
                         <label for="" data-placeholder="Confirm Password"></label>
-                        <input id="passwordConfirm" type="password" placeholder="Confirm Password" autocomplete="off"
-                            data-js="form-text" required>
+                        <input type="password" placeholder="Confirm Password" autocomplete="off" data-js="form-text" required>
                     </div>
                 </div>
                 <div class="user-details1">
                     <div class="input-box">
                         <label for="" data-placeholder="Address"></label>
-                        <input id="address" type="text" placeholder="Address" autocomplete="off" data-js="form-text"
-                            required>
+                        <input type="text" placeholder="Address" autocomplete="off" data-js="form-text" required>
                     </div><br>
                 </div>
 
                 <div id="formFooter">
-                    <a onclick="sendRequest()" class="underlineHover" href="#">Save</a>
+                    <a class="underlineHover" href="#">Save</a>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="footer page-footer bg-dark">
+        <div class="container text-center text-md-left mt-5">
+            <div class="row">
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="my-row font-weight-bold mt-4" style="color: white; display:flex; align-items: center;justify-content: center;"><a href="home">Group 8</a></h6>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"><a href="HomeFinal.html">Discover</h6>
+              <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px"> 
+            </div>
+            <div class="col-md-2 mx-auto mb-4">
+                <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4">Shop</h6>
+                <hr class="bg-success mb-0 d-inline" style="width: 85px; height: 2px"> 
+                <ul class="list-unstyled">
+                  <li class="Laptop my-2"> <a href="headphone.html" style="Color:White; text-decoration: none;">Headphones</a></li>
+                        <li class="Phones my-2"> <a href="phone.html" style="Color:White; text-decoration: none;">Phones</a></li>
+                        <li class="Tabletmy-2"> <a href="tablet.html" style="Color:White; text-decoration: none;">Tablet</a></li>
+                        </ul>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="width:85px; height: 2px; color:White"><a href="#">Contact</a></h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                </div>
+            </div>
         </div>
     </div>
     <div class="page-footer bg-dark">
         <div class="container text-center text-md-left mt-5">
             <div class="row">
                 <div class="col-md-3 mx-auto mb-4">
-                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4"
-                        style="color: white; display:flex; align-items: center;justify-content: center;">Group 8</h6>
+                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4" style="color: white; display:flex; align-items: center;justify-content: center;"><a style="text-decoration: none; color:white; font-size: 22px;">Group 8</a></h6>
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
-                        style="width:85px; height: 2px; color:White">Discover</h6>
+                    <h6 class="heading0 text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White"><a href="Home.html" style="text-decoration: none; color:white;">Discover</a></h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
-                        style="width:85px; height: 2px; color:White">Shop</h6>
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White">Shop</h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                     <ul class="list-unstyled">
-                        <li class="Laptop my-2"> <a href="#" style="Color:White; text-decoration: none;">Laptop</a></li>
-                        <li class="Phones my-2"> <a href="#" style="Color:White; text-decoration: none;">Phones</a></li>
-                        <li class="Tabletmy-2"> <a href="#" style="Color:White; text-decoration: none;">Tablet</a></li>
+                        <li class="Laptop my-2"> <a href="Phone.html" style="Color:White; text-decoration: none;">Smartphone</a></li>
+                        <li class="Phones my-2"> <a href="Tablet.html" style="Color:White; text-decoration: none;">Tablet</a></li>
+                        <li class="Tablet my-2"> <a href="Headphones.html" style="Color:White; text-decoration: none;">Headphone</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 mx-auto mb-4">
-                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4"
-                        style="width:85px; height: 2px; color:White">Contact</h6>
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White"><a href="Contact.html" style="text-decoration: none; color:white;">Contact</a></h6>
                     <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
                 </div>
             </div>
@@ -639,52 +679,6 @@
 
     function closeSearch() {
         document.getElementById("myOverlay").style.display = "none";
-    }
-
-    function myFunctionlogin() {
-        alert("Please login or register!");
-    }
-
-    function sendRequest() {
-        var firstName = document.getElementById("firstName").value;
-        var lastName = document.getElementById("lastName").value;
-        var userName = document.getElementById("userName").value;
-        var password = document.getElementById("password").value;
-        var passwordConfirm = document.getElementById("passwordConfirm").value;
-        var birthday = document.getElementById("birthday").value;
-        var phoneNumber = document.getElementById("phoneNumber").value;
-        var address = document.getElementById("address").value;
-        var email = document.getElementById("email").value;
-
-        if (password === passwordConfirm) {
-            fetch('http://localhost:8080/registration', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify({
-                    firstName: firstName,
-                    lastName: lastName,
-                    userName: userName,
-                    password: password,
-                    birthDay: birthday,
-                    phoneNumber: phoneNumber,
-                    address: address,
-                    email: email
-                })
-            })
-
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    alert(data.message);
-                    window.location = 'LoginFinal.html';
-                })
-                .catch(err => { console.log(err) })
-        }
-        else {
-            alert("Password Confirmation does not match Password. Please try again.");
-        }
     }
 </script>
 

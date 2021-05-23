@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" /> -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/CSS/Contact.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <a class="navbar-brand" href="#"><img src="/Image/Logo/logo.png" alt="logo" style="width: 70%; padding: 0;" /></a>
+        <div class="collapse navbar-collapse" style="padding: 0;" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="Home.html">Discover</a></li>
+
+                <li class="dropdown">
+                    <a class="nav-link " href="#">Shop</a>
+                    <div class="dropdown-content">
+                        <a href="phone.html">Smartphone</a>
+                        <a href="tablet.html">Tablet</a>
+                        <a href="headphone.html">Headphone</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span
+        >
+        <div class="overlay-content">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search" />
+          </form>
+        </div>
+      </div>
+      <button class="openBtn bg-dark" onclick="openSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+
+      <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+      <button class="cartBtn bg-dark" id="cart">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Shopping cart</h5>
+                <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="cart-row" style="display:flex">
+                <span class="cart-item cart-header cart-column">Product</span>
+                <span class="cart-price cart-header cart-column">Price</span>
+                <span class="cart-quantity cart-header cart-column">Quantity</span>
+            </div>
+            <div class="cart-items">
+
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total:</strong>
+                <span class="cart-total-price">0 USD</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close-footer">Close</button>
+            <button type="button" class="btn btn-primary order">Payment</button>
+        </div>
+        </div>
+        </div>
+    </nav>
+    <h2>Wellcome to team 8</h2>
+    <p>We sell everything </p>
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img class="memberimage" src=" /Image/ContactImages/Hue.jpg " alt="Jane " style="width:100% ">
+                <div class="container ">
+                    <h2>Pham Huynh Hue </h2>
+                    <p class="title ">Full-stack developer</p>
+                    <p>Hue is a 3rd-year of software engineer at RMIT University.</p>
+                    <p>s3702554@rmit.edu.vn</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <img class="memberimage" src="/Image/ContactImages/Dat.jpg " alt="Mike " style="width:100% ">
+                <div class="container ">
+                    <h2>Pham Thanh Dat</h2>
+                    <p class="title ">Front-end developer</p>
+                    <p>Dat is a 3rd-year of software engineering at RMIT University.</p>
+                    <p>s3678437@rmit.edu.vn</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <img class="memberimage" src="/Image/ContactImages/Bill.JPG" alt="John " style="width:100% ">
+                <div class="container ">
+                    <h2>Hoang Tran Tuan Ngoc</h2>
+                    <p class="title ">Back-end developer</p>
+                    <p>Ngoc is a senior-year software engineering undergraduate. </p>
+                    <p>s3681441@rmit.edu.vn</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column ">
+            <div class="card ">
+                <img class="memberimage" src="/Image/ContactImages/Kiet.jpg" alt="John " style="width:100% ">
+                <div class="container ">
+                    <h2>Kiet Park</h2>
+                    <p class="title ">Front-end developer</p>
+                    <p>Kiet is a 2nd-year of software engineering at RMIT University</p>
+                    <p>s3681475@rmit.edu.vn</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="page-footer bg-dark">
+        <div class="container text-center text-md-left mt-5">
+            <div class="row">
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="Group_8 text-uppercase font-weight-bold mt-4" style="color: white; display:flex; align-items: center;justify-content: center;"><a style="text-decoration: none; color:white; font-size: 22px;">Group 8</a></h6>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="heading0 text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White"><a href="Home.html" style="text-decoration: none; color:white;">Discover</a></h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White">Shop</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                    <ul class="list-unstyled">
+                        <li class="Laptop my-2"> <a href="Phone.html" style="Color:White; text-decoration: none;">Smartphone</a></li>
+                        <li class="Phones my-2"> <a href="Tablet.html" style="Color:White; text-decoration: none;">Tablet</a></li>
+                        <li class="Tablet my-2"> <a href="Headphones.html" style="Color:White; text-decoration: none;">Headphone</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mx-auto mb-4">
+                    <h6 class="Product text-uppercase mb-4 mt-0 d-inline-block mx-auto mt-4" style="font-size: 18px; color:White"><a href="Contact.html" style="text-decoration: none; color:white;">Contact</a></h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline mx-auto" style="width: 85px; height: 2px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="/JavaScript/Contact.js ">
+</script>
+
+</html>

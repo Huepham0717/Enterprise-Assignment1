@@ -239,7 +239,9 @@
 }
 
 h5.modal-title {
-    font-size: 1.5rem;
+    font-size: 25px;
+    color: teal;
+    font-weight: 10px;
 }
 
 .close {
