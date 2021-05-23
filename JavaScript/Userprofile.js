@@ -6,14 +6,14 @@ function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
-// function checkIfLoggedIn() {
-//     if (sessionStorage.getItem("currentlyLoggedIn") !== "1") {
-//         alert("You are not signed in. Please sign in first.");
-//         window.location = '/HTML/Login.html';
-//     } else {
-//         loadUser(sessionStorage.getItem("currentUsername"))
-//     }
-// }
+function checkIfLoggedIn() {
+    if (sessionStorage.getItem("currentlyLoggedIn") !== "1") {
+        alert("You are not signed in. Please sign in first.");
+        window.location = '/HTML/Login.html';
+    } else {
+        loadUser(sessionStorage.getItem("currentUsername"))
+    }
+}
 
 function loadUser(userName) {
     fetch('http://localhost:8080/user/'.concat(userName))
@@ -21,34 +21,41 @@ function loadUser(userName) {
         .then(response => response.json())
         .then(json => {
             console.log(json)
+            if (json.message == "Access Denied") {
+                sessionStorage.clear();
+                alert("An error has occured. Please sign in again.");
+                window.location = 'Login.html';
+            } else {
+                userId = json.id
 
-            userId = json.id
+                sessionStorage.setItem("currentUserId", userId)
 
-            sessionStorage.setItem("currentUserId", userId)
+                var firstName = json.firstName
+                document.getElementById("firstName").value = firstName;
 
-            var firstName = json.firstName
-            document.getElementById("firstName").value = firstName;
+                var lastName = json.lastName
+                document.getElementById("lastName").value = lastName;
 
-            var lastName = json.lastName
-            document.getElementById("lastName").value = lastName;
+                var userName = json.userName
+                document.getElementById("userName").value = userName;
 
-            var userName = json.userName
-            document.getElementById("userName").value = userName;
+                var birthDay = json.birthDay
+                document.getElementById("birthDay").value = birthDay;
+                console.log(birthDay)
+                console.log(typeof birthDay)
 
-            var birthDay = json.birthDay
-            document.getElementById("birthDay").value = birthDay;
+                var email = json.email
+                document.getElementById("email").value = email;
 
-            var email = json.email
-            document.getElementById("email").value = email;
+                var phoneNumber = json.phoneNumber
+                document.getElementById("phoneNumber").value = phoneNumber;
 
-            var phoneNumber = json.phoneNumber
-            document.getElementById("phoneNumber").value = phoneNumber;
+                // var password = json.password
+                // document.getElementById("password").value = password;
 
-            var password = json.password
-            document.getElementById("password").value = password;
-
-            var address = json.address
-            document.getElementById("address").value = address;
+                var address = json.address
+                document.getElementById("address").value = address;
+            }
         })
 }
 
@@ -75,25 +82,30 @@ function sendRequest() {
     requestURL.searchParams.append("email", email);
     requestURL.searchParams.append("birthDay", birthDay);
 
-    if (password === passwordConfirm) {
-        fetch(requestURL, {
-            method: 'PUT',
-        })
+    if (password) {
+        if (password === passwordConfirm) {
+            fetch(requestURL, {
+                method: 'PUT',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // document.cookie = "username=".concat(userName);
+                    sessionStorage.setItem('currentUsername', userName);
+                    alert(data.message);
+                    // console.log(requestURL)
+                    window.location = 'Userprofile.html';
 
-        .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                // document.cookie = "username=".concat(userName);
-                sessionStorage.setItem('currentUsername', userName);
-                alert(data.message);
-                console.log(requestURL)
-                window.location = 'Userprofile.html';
-            })
-            .catch(err => {
-                console.log(err);
-                console.log(requestURL)
-            })
+                })
+                .catch(err => {
+                    console.log(err);
+                    console.log(requestURL)
+                })
+        }
+        else {
+            alert("Password Confirmation does not match Password. Please try again.");
+        }
     } else {
-        alert("Password Confirmation does not match Password. Please try again.");
+        alert("Your password cannot be empty. Please try again.");
     }
 }

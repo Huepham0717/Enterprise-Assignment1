@@ -206,7 +206,6 @@
 }
 
 .btn {
-    background-color: #1be29f;
     cursor: pointer;
     outline: none;
     font-weight: 400;
@@ -219,6 +218,13 @@
     font-size: 15px;
     border-radius: .25rem;
     transition: all .2s ease-in-out;
+    color: whitesmoke;
+    background-color:#e2c9bb;
+}
+
+.btn:hover {
+    color: #7f4d3d;
+    background-color:#e2c9bb;
 }
 
 .btn-danger {
