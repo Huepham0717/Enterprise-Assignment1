@@ -13,48 +13,59 @@ public class ProductConfig {
     @Bean
     CommandLineRunner productCommandLineRunner(ProductRepository repository){
         return args -> {
-            Product LenovoIdeaPadS14515i3 = new Product(
-            "Lenovo IdeaPad S145 15 i3",
-            "Lenovo",
-            "Laptop",
+            Product AirPodsMax = new Product(
+            "AirPods Max",
+            "Apple",
+            "Headphones",
             "12 Months",
-            "issa laptop",
-            "https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2019/11/5/637085681382679339_lenovo-ideapad-s145-bac-1.png",
+            "issa pair of headphones",
+            "https://cdn.tgdd.vn/Products/Images/54/236331/bluetooth-airpods-max-apple-1-1-org.jpg",
             "No Discount",
-                    11490000
+                    12690000
             );
 
-            Product OMENLaptop15 = new Product(
-                    "OMEN Laptop 15",
-                    "HP",
-                    "Laptop",
+            Product AirPodsPro = new Product(
+                    "AirPods Pro",
+                    "Apple",
+                    "Headphones",
                     "12 Months",
-                    "issa laptop",
-                    "https://www.hp.com/us-en/shop/app/assets/images/product/3G346UA%23ABA/center_facing.png?_=1595580794761&imwidth=75&imdensity=1",
+                    "issa pair of headphones",
+                    "https://cdn.tgdd.vn/Products/Images/54/236026/airpods-pro-wireless-charge-apple-mwp22-ava-1-org.jpg",
                     "No Discount",
-                    23059000
+                    5300000
             );
 
-            Product LGGram14 = new Product(
-                    "LG Gram 14",
-                    "LG",
-                    "Laptop",
+            Product AirPods2 = new Product(
+                    "AirPods 2",
+                    "Apple",
+                    "Headphones",
                     "12 Months",
-                    "issa laptop",
-                    "https://www.lg.com/vn/images/laptops/md07530543/gallery/S-1.jpg",
+                    "issa pair of headphones",
+                    "https://cdn.tgdd.vn/Products/Images/54/236025/airpods-2-wireless-charge-apple-mrxj2-1-org.jpg",
                     "No Discount",
-                    29500000
+                    4460000
             );
 
-            Product AcerAspire5A514i3 = new Product(
-                    "Acer Aspire 5 A514 i3",
-                    "Acer",
-                    "Laptop",
+            Product BeatsSoloPro = new Product(
+                    "Beats Solo Pro",
+                    "Beats",
+                    "Headphones",
                     "12 Months",
-                    "issa laptop",
-                    "https://cdn.tgdd.vn/Products/Images/44/231082/acer-aspire-5-a514-54-33wy-i3-nxa23sv00j-2-org.jpg",
+                    "issa pair of headphones",
+                    "https://tainghe.com.vn/media/product/2830_51rpzy6uual__ac_sl1000_.jpg",
                     "No Discount",
-                    13590000
+                    7290000
+            );
+
+            Product BeatsStudio3Wireless = new Product(
+                    "Beats Studio 3 Wireless",
+                    "Beats",
+                    "Headphones",
+                    "12 Months",
+                    "issa pair of headphones",
+                    "https://tainghe.com.vn/media/product/1615_tai_nghe_beats_studio_3_wireless___sand_dune.jpg",
+                    "No Discount",
+                    7290000
             );
 
             Product SamsungGalaxyZFold25G = new Product(
@@ -158,10 +169,11 @@ public class ProductConfig {
 
             repository.saveAll(
                     List.of(
-                            LenovoIdeaPadS14515i3,
-                            OMENLaptop15,
-                            LGGram14,
-                            AcerAspire5A514i3,
+                            AirPodsMax,
+                            AirPodsPro,
+                            AirPods2,
+                            BeatsSoloPro,
+                            BeatsStudio3Wireless,
                             SamsungGalaxyZFold25G,
                             iPhone12ProMax,
                             XiaomiMi115G,
