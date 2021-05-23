@@ -134,15 +134,95 @@ btn_menu.addEventListener("click", function() {
     }
 })
 
-function getProducts() {
-    fetch('http://localhost:8080/product/search?keyword=', {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            userName: userName,
-            password: passWord
+function getProducts(productType) {
+
+    var requestURL = new URL('http://localhost:8080/product/search?keyword='.concat(productType));
+
+    fetch('http://localhost:8080/product/search?keyword='.concat(productType))
+        // fetch('https://reqres.in/api/users')
+        // fetch('http://localhost:8080/user/billhoang11')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+
+            for (let i = 0; i < json.length; i++) {
+
+                var productName = json[i].productName
+                var description = json[i].description
+                var brand = json[i].brand
+                var imgURL = json[i].imgURL
+
+                var price = json[i].price.toString()
+                for (let j = price.length; j >= 0; j-=3) {
+                    if (j!==price.length) {
+                        price = price.substring(0, j) + "." + price.substring(j, price.length);
+                        console.log(j)
+                    }
+                }
+
+                document.querySelector(".row").innerHTML +=`
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <h4 class="text-center">
+                                <span class="label label-info">${brand}</span>
+                            </h4>
+                            <img src="${imgURL}" class="img-responsive" />
+                            <div class="caption">
+                                <div class="row" style="display: flex; align-items: center;justify-content: center;">
+                                    <div class="col-md-6 col-xs-6" style="font-size: 30px; color:#4682B4; font-weight: bold;">
+                                        <h3 class="content-product-h3">${productName}</h3>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 price">
+                                        <div class="price" style="font-size: 20px; color: #FF4500; font-weight: bold;">
+                                            <span class="money">${price}₫</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="content-pr">${description}</p>
+                                <div class="row" style="display: flex; align-items: center;justify-content: center;">
+                                    <button type="button" class="btn btn-cart "><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button>
+                                </div>
+
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                `
+
+                // if (i%3 === 0) {
+                //     document.querySelector(".container").innerHTML += '<div class="row"></div>'
+                // } else {
+                //     document.querySelector(".row").innerHTML += '<div class="col-sm-6 col-md-4"></div>'
+
+                // }
+                // document.write(name)
+            }
+
+
+            // userID = json.id
+
+            // var firstName = json.firstName
+            // document.getElementById("firstName").value = firstName;
+
+            // var lastName = json.lastName
+            // document.getElementById("lastName").value = lastName;
+
+            // var userName = json.userName
+            // document.getElementById("userName").value = userName;
+
+            // var email = json.email
+            // document.getElementById("email").value = email;
+
+            // var password = json.password
+            // document.getElementById("password").value = password;
+
+            // var address = json.address
+            // document.getElementById("address").value = address;
+
+            // var phoneNumber = json.phoneNumber
+            // document.getElementById("phoneNumber").value = phoneNumber;
+
+
+
         })
-    })
 }
