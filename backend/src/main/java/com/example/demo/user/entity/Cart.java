@@ -14,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-@Table(name = "cart",uniqueConstraints={@UniqueConstraint(columnNames ={"cartId"})})
+@Table(name = "cart", uniqueConstraints = {@UniqueConstraint(columnNames = {"cartId"})})
 public class Cart {
     @SequenceGenerator(
             name = "cart_sequence",
@@ -29,19 +29,21 @@ public class Cart {
     private Long cartId;
     private LocalDate date;
     @ManyToOne
-    @JoinColumn(nullable = false,name = "id")
+    @JoinColumn(nullable = false, name = "id")
     private User user;
     private float amount;
-    @OneToMany(mappedBy="cart")
+    @OneToMany(mappedBy = "cart")
     private List<CartItem> cartItemList;
 
-    public Cart(Long cartId, LocalDate date, User user, float amount) {
+    private boolean isCompleted;
+
+    public Cart(Long cartId, LocalDate date, User user, float amount, boolean isCompleted) {
         this.cartId = cartId;
         this.date = date;
         this.user = user;
         this.amount = amount;
+        this.isCompleted = isCompleted;
     }
-
 
 
     public Long getCartId() {
@@ -76,6 +78,14 @@ public class Cart {
         this.amount = amount;
     }
 
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
     @Override
     public String toString() {
         return "Cart{" +
@@ -83,6 +93,7 @@ public class Cart {
                 ", date=" + date +
                 ", user=" + user +
                 ", amount=" + amount +
+                ", closed=" + isCompleted +
                 '}';
     }
 }
