@@ -73,7 +73,7 @@ public class ProductConfig {
                     "Samsung",
                     "Smartphone",
                     "12 Months",
-                    "issa Samsung Galaxy Z Fold2 5G",
+                    "issa Samsung Galaxy Z Fold 2 5G",
                     "https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-den-1-org.jpg",
                     "No Discount",
                     50000000
