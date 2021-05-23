@@ -23,9 +23,7 @@ close.onclick = function() {
 close_footer.onclick = function() {
     modal.style.display = "none";
 }
-order.onclick = function() {
-    alert("Thank yoy for your order")
-}
+
 window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
