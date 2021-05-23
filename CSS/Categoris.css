@@ -376,3 +376,11 @@ h5.modal-title {
     padding: 0 20%;
     margin-right: 50%;
 }
+
+.money {
+    float: right;
+}
+
+.content-pr {
+    text-align: center;
+}
