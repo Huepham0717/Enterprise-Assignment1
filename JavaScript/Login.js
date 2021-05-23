@@ -27,7 +27,7 @@ function loadUser() {
             if (json.message == "Access Denied") {
                 sessionStorage.clear();
                 alert("There are no accounts with this username. Please try again.");
-                window.location = 'Login.html';
+                // window.location = 'Login.html';
             } else {
                 sendRequest();
             }
