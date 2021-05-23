@@ -147,6 +147,16 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+.navbar-brand {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.btn-product {
+    width: 100%;
+}
+
 
 /* BASIC */
 
@@ -478,13 +488,4 @@ input[type=text]:placeholder {
 
 * {
     box-sizing: border-box;
-}
-
-#formFooter {
-    background-color: #f6f6f6;
-    border-top: 1px solid #dce8f1;
-    padding: 25px;
-    text-align: center;
-    -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
 }

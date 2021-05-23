@@ -57,25 +57,24 @@
     color: #ccc;
 }
 
-.overlay input[type="text"] {
+.overlay input[type=text] {
     padding: 16px;
     font-size: 20px;
     border-radius: 12px;
     float: center;
     width: 80%;
-    height: 55px;
     background: white;
     text-align: left;
-    margin-top: 0px;
 }
 
-.overlay input[type="text"]:hover {
-    background-color: #ffff;
+.overlay input[type=text]:hover {
+    background: #fff;
+    outline: none;
 }
 
 .overlay input[type=text]:focus {
     background-color: #fff;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #fff;
 }
 
 .userBtn {
@@ -114,10 +113,6 @@
     font-size: 150%;
 }
 
-li.dropdown {
-    display: inline-block;
-}
-
 .dropdown {
     position: relative;
     display: inline-block;
@@ -149,6 +144,117 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+.navbar-brand {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.btn-product {
+    width: 100%;
+}
+
+
+/* BASIC */
+
+html {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+a {
+    color: #92badd;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 40px 8px 10px 8px;
+    color: #e2d5d5;
+    text-decoration: none;
+}
+
+
+/* STRUCTURE */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    margin-top: 40px;
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 900px;
+    padding-top: 40px;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* TABS */
+
+.h2 {
+    margin-bottom: 80px;
+}
+
+.h2 div {
+    display: block;
+    padding: 14px 16px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 150px;
+}
+
+h2.inactive {
+    font-size: 20px;
+    color: #cccccc;
+}
+
+h2.active {
+    font-size: 20px;
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
