@@ -3,6 +3,7 @@ package com.example.demo.user.controller;
 import com.example.demo.user.entity.User;
 import com.example.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +46,7 @@ public class UserController {
             @RequestParam(required = false) String userName,
             @RequestParam(required = false) String lastName,
             @RequestParam(required = false) String password,
-            @RequestParam(required = false) LocalDate birthDay,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate birthDay,
             @RequestParam(required = false) Long phoneNumber,
             @RequestParam(required = false) String address,
             @RequestParam(required = false) String email){

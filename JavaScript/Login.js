@@ -12,8 +12,8 @@ function myFunctionlogin() {
 
 function checkIfLoggedIn() {
     if (sessionStorage.getItem("currentlyLoggedIn") == "1") {
-        alert("You are already logged in.");
-        window.location = '/Home/HomeFinal.html';
+        // alert("You are already logged in.");
+        window.location = '/HTML/Userprofile.html';
     }
 }
 
@@ -40,12 +40,13 @@ function sendRequest() {
                 alert("Username or Password incorrect. Please try again.");
                 // window.location = 'login1.html';
             } else {
-                alert(data.message);
+                
                 // document.cookie = "username=".concat(userName);
                 // console.log(document.cookie);
-                // window.location = 'user.html';
                 sessionStorage.setItem('currentlyLoggedIn', '1');
                 sessionStorage.setItem('currentUsername', userName);
+                alert(data.message);
+                window.location = '/HTML/Userprofile.html';
             }
         })
 
