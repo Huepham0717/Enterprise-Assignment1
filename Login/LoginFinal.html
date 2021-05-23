@@ -511,7 +511,7 @@
     }
 </style>
 
-<body>
+<body onload="checkIfLoggedIn()">
     <!-- Optional JavaScript -->
     <!-- jQuery first,
     then Popper.js,
@@ -626,8 +626,15 @@
         document.getElementById("myOverlay").style.display = "none";
     }
 
-    function myFunctionlogin() {
-        alert("Please login or register!");
+    // function myFunctionlogin() {
+    //     alert("Please login or register!");
+    // }
+
+    function checkIfLoggedIn() {
+        if (sessionStorage.getItem("currentlyLoggedIn") == "1") {
+            alert("You are already logged in.");
+            window.location = '/Home/HomeFinal.html';
+        }
     }
 
     function sendRequest() {
@@ -655,9 +662,11 @@
                 }
                 else {
                     alert(data.message);
-                    document.cookie = "username=".concat(userName);
-                    console.log(document.cookie);
+                    // document.cookie = "username=".concat(userName);
+                    // console.log(document.cookie);
                     // window.location = 'user.html';
+                    sessionStorage.setItem('currentlyLoggedIn', '1');
+                    sessionStorage.setItem('currentUsername', userName);
                 }
             })
 
