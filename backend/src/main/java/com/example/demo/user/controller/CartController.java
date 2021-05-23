@@ -36,6 +36,5 @@ public class CartController {
     public String updateAmountInTheCart(@PathVariable("cartId") Long cartId,
                                         @RequestParam(required = false) float amount){
         return cartService.updateAmountInTheCart(cartId,amount);
-
     }
 }

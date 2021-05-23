@@ -17,6 +17,23 @@ function checkIfLoggedIn() {
     }
 }
 
+function loadUser() {
+    var userName = document.getElementById("userName").value;
+    fetch('http://localhost:8080/user/'.concat(userName))
+        // fetch('http://localhost:8080/user/billhoang11')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            if (json.message == "Access Denied") {
+                sessionStorage.clear();
+                alert("There are no accounts with this username. Please try again.");
+                window.location = 'Login.html';
+            } else {
+                sendRequest();
+            }
+        })
+}
+
 function sendRequest() {
 
     var userName = document.getElementById("userName").value;
@@ -33,14 +50,14 @@ function sendRequest() {
         })
     })
 
-    .then(response => response.json())
+        .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
             if (data.message == "Access Denied") {
-                alert("Username or Password incorrect. Please try again.");
+                alert("Password is incorrect. Please try again.");
                 // window.location = 'login1.html';
             } else {
-                
+
                 // document.cookie = "username=".concat(userName);
                 // console.log(document.cookie);
                 sessionStorage.setItem('currentlyLoggedIn', '1');
@@ -50,9 +67,9 @@ function sendRequest() {
             }
         })
 
-    .catch(err => {
-        alert("Username or Password incorrect. Please try again.");
-        console.log(err);
+        .catch(err => {
+            alert("Username or Password incorrect. Please try again.");
+            console.log(err);
 
-    })
+        })
 }

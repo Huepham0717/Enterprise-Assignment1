@@ -14,19 +14,21 @@ function checkIfLoggedIn() {
     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
         alert("You are currently signed in. Please open this page in another tab to register a new account.");
         window.location = '/HTML/Userprofile.html';
-    }}
+    }
+}
 
-    function sendRequest() {
-        var firstName = document.getElementById("firstName").value;
-        var lastName = document.getElementById("lastName").value;
-        var userName = document.getElementById("userName").value;
-        var password = document.getElementById("password").value;
-        var passwordConfirm = document.getElementById("passwordConfirm").value;
-        var birthday = document.getElementById("birthday").value;
-        var phoneNumber = document.getElementById("phoneNumber").value;
-        var address = document.getElementById("address").value;
-        var email = document.getElementById("email").value;
+function sendRequest() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var userName = document.getElementById("userName").value;
+    var password = document.getElementById("password").value;
+    var passwordConfirm = document.getElementById("passwordConfirm").value;
+    var birthday = document.getElementById("birthday").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
 
+    if (password) {
         if (password === passwordConfirm) {
             fetch('http://localhost:8080/registration', {
                 method: 'POST',
@@ -50,7 +52,7 @@ function checkIfLoggedIn() {
                     console.log('Success:', data);
                     alert(data.message);
                     if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
-                    window.location = 'Login.html';
+                        window.location = 'Login.html';
                     }
                 })
                 .catch(err => {
@@ -59,4 +61,7 @@ function checkIfLoggedIn() {
         } else {
             alert("Password Confirmation does not match Password. Please try again.");
         }
+    } else {
+        alert("Your password cannot be empty. Please try again.");
     }
+}
