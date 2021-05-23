@@ -69,7 +69,7 @@ public class ProductConfig {
             );
 
             Product SamsungGalaxyZFold25G = new Product(
-                    "Samsung Galaxy Z Fold2 5G",
+                    "Samsung Galaxy Z Fold 2 5G",
                     "Samsung",
                     "Smartphone",
                     "12 Months",
