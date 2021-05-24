@@ -448,3 +448,8 @@ h5.modal-title {
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
 }
+.checkout .btn-danger{
+    color: white;
+    
+    
+}

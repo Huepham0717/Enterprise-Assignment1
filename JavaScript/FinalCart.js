@@ -186,12 +186,12 @@ for (var i = 0; i < remove_cart.length; i++) {
     })
 }
 
-function checkIfLoggedIn() {
-    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
-        // window.location = '/HTML/Userprofile.html';
-        loadCartItem(sessionStorage.getItem("currentCartId")); // TODO
-    } else {
-        alert("You are not signed in. Please sign in first.")
-        window.location = '/HTML/Login.html';
-    }
-}
+// function checkIfLoggedIn() {
+//     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+//         // window.location = '/HTML/Userprofile.html';
+//         loadCartItem(sessionStorage.getItem("currentCartId")); // TODO
+//     } else {
+//         alert("You are not signed in. Please sign in first.")
+//         window.location = '/HTML/Login.html';
+//     }
+// }
