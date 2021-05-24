@@ -50,10 +50,11 @@ function sendRequest() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    alert(data.message);
+                    // alert(data.message);
                     if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
                         loadUser(userName);
-                        // window.location = 'Login.html';
+                        alert(data.message);
+                        window.location = 'Login.html';
                     }
                 })
                 .catch(err => {
@@ -118,18 +119,4 @@ function createFirstCart(userId) {
             }
         )
     })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log('Success:', data);
-        //     window.location = 'Login.html';
-        //     // alert(data.message);
-        //     // if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
-        //     //     loadUser(userName);
-        //     //     window.location = 'Login.html';
-        //     // }
-        // })
-        .then(window.location = 'Login.html')
-        .catch(err => {
-            console.log(err)
-        })
 }
