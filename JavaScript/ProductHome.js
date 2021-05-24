@@ -1,13 +1,11 @@
+
+
 function openSearch() {
     document.getElementById("myOverlay").style.display = "block";
 }
 
 function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
-}
-
-function checkIfLoggedIn() {
-    return sessionStorage.getItem("currentlyLoggedIn");
 }
 
 // Modal
@@ -142,14 +140,6 @@ btn_menu.addEventListener("click", function () {
     }
 })
 
-function loginOrRegister() {
-    if (checkIfLoggedIn() == "1") {
-        // goto user profile
-    } else {
-        window.location = '/Login/LoginFinal.html';
-    }
-}
-
 function checkIfLoggedInForUser() {
     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
         window.location = '/HTML/Userprofile.html';
@@ -172,6 +162,69 @@ function checkIfLoggedInForAddToCart() {
         // window.location = '/HTML/FinalCart.html';
         // modal.style.display = "block";
         // ADD TO CARD HERE
+        addToCart(sessionStorage.getItem("selectedProduct"))
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function addToCart(productId) {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        if (sessionStorage.getItem("productsInCurrentCart")) {
+            if ((sessionStorage.getItem("productsInCurrentCart")).includes(productId)) {
+                alert("This product is already in your cart. You can click the cart button to change quantity.");
+            } else {
+                sessionStorage.setItem("productsInCurrentCart", sessionStorage.getItem("productsInCurrentCart") + ',' + productId);
+            }
+        } else {
+            sessionStorage.setItem("productsInCurrentCart", productId);
+        }
+
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function getProduct() {
+    fetch('http://localhost:8080/product/id/'.concat(sessionStorage.getItem("selectedProduct")))
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+
+                var productId = json.productId
+                var productName = json.productName
+                var description = json.description
+                var brand = json.brand
+                var imgURL = json.imgURL
+
+                var price = json.price.toString()
+                for (let j = price.length; j >= 0; j -= 3) {
+                    if (j !== price.length) {
+                        price = price.substring(0, j) + "." + price.substring(j, price.length);
+                    }
+                }
+
+                document.querySelector("#imgURL").src = imgURL;
+                document.querySelector("#productName").innerHTML = productName;
+                document.querySelector("#description").innerHTML = description;
+                document.querySelector("#priceFormatted").innerHTML = price + "₫";
+        })
+}
+
+function addToCart(productId) {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        if (sessionStorage.getItem("productsInCurrentCart")) {
+            if ((sessionStorage.getItem("productsInCurrentCart")).includes(productId)) {
+                alert("This product is already in your cart. You can click the cart button to change quantity.");
+            } else {
+                sessionStorage.setItem("productsInCurrentCart", sessionStorage.getItem("productsInCurrentCart") + ',' + productId);
+            }
+        } else {
+            sessionStorage.setItem("productsInCurrentCart", productId);
+        }
+
     } else {
         alert("You are not signed in. Please sign in first.")
         window.location = '/HTML/Login.html';

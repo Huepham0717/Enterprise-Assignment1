@@ -137,8 +137,6 @@ btn_menu.addEventListener("click", function () {
 
 function getProducts(productType) {
 
-    var requestURL = new URL('http://localhost:8080/product/search?keyword='.concat(productType));
-
     fetch('http://localhost:8080/product/search?keyword='.concat(productType))
         // fetch('https://reqres.in/api/users')
         // fetch('http://localhost:8080/user/billhoang11')

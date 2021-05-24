@@ -40,9 +40,14 @@ public class ProductController {
        productService.deleteProduct( productId);
     }
 
-    @GetMapping(path = "{productName}")
+    @GetMapping(path = "name/{productName}")
     public Optional<Product> loadProductByProductName(@PathVariable("productName") String productName) {
         return productService.loadProductByProductName(productName);
+    }
+
+    @GetMapping(path = "id/{productId}")
+    public Optional<Product> loadProductByProductId(@PathVariable("productId") Long productId) {
+        return productService.loadProductByProductId(productId);
     }
 
     @GetMapping(path ="sort")

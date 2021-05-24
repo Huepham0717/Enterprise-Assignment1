@@ -43,4 +43,8 @@ public class ProductService {
     public Optional<Product> loadProductByProductName(String productName){
         return productRepository.findProductByProductName(productName);
     }
+
+    public Optional<Product> loadProductByProductId(Long productId){
+        return productRepository.findProductByProductId(productId);
+    }
 }
