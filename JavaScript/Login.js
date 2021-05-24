@@ -11,7 +11,7 @@ function myFunctionlogin() {
 }
 
 function checkIfLoggedIn() {
-    if (sessionStorage.getItem("currentlyLoggedIn") == "1") {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
         window.location = '/HTML/Userprofile.html';
     }
 }

@@ -15,7 +15,8 @@ var close = document.getElementsByClassName("close")[0];
 var close_footer = document.getElementsByClassName("close-footer")[0];
 var order = document.getElementsByClassName("order")[0];
 btn.onclick = function() {
-    modal.style.display = "block";
+    checkIfLoggedInForCart()
+    // modal.style.display = "block";
 }
 close.onclick = function() {
     modal.style.display = "none";
@@ -134,3 +135,22 @@ btn_menu.addEventListener("click", function() {
         item_menu.style.display = "block";
     }
 })
+
+function checkIfLoggedInForUser() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        window.location = '/HTML/Userprofile.html';
+    } else {
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function checkIfLoggedInForCart() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        // window.location = '/HTML/FinalCart.html';
+        modal.style.display = "block";
+
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
+}
