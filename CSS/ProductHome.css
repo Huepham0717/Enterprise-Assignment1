@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0.0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-collapse a {
+    font-size: 30px;
+}
+
+.openBtn {
+    margin-left: 20%;
+    border: none;
+    margin-left: 0px;
+    padding: 15px 20px;
+    font-size: 120%;
+    cursor: pointer;
+    color: white;
+}
+
+.openBtn:hover {
+    font-weight: bold;
+    border-bottom: 2px solid aqua;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 00;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 3%;
+    width: 60%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    margin-right: 0px;
+    right: 20px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 12px;
+    float: center;
+    width: 80%;
+    background: white;
+    text-align: left;
+}
+
+.overlay input[type=text]:hover {
+    background: #fff;
+    outline: none;
+}
+
+.overlay input[type=text]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.userBtn {
+    margin-left: 2%;
+    border: none;
+    padding: 15px 20px;
+    font-size: 120%;
+    cursor: pointer;
+    color: white;
+}
+
+.userBtn:hover {
+    font-weight: bold;
+    border-bottom: 2px solid aqua;
+}
+
+.cartBtn {
+    margin-left: 2%;
+    border: none;
+    padding: 15px 20px;
+    font-size: 120%;
+    cursor: pointer;
+    color: white;
+}
+
+.cartBtn:hover {
+    font-weight: bold;
+    border-bottom: 2px solid aqua;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0%;
+}
+
+.navbar-nav {
+    margin-left: 40%;
+}
+
+.navbar-nav a {
+    font-size: 150%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    margin-left: -44px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: middle;
+}
+
+.dropdown-content a:hover {
+    text-decoration: none;
+    background-color: #A9A9A9;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar-brand {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.btn-product {
+    width: 100%;
+}
