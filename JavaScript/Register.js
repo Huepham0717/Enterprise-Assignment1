@@ -50,7 +50,6 @@ function sendRequest() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    // alert(data.message);
                     if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
                         loadUser(userName);
                         alert(data.message);
@@ -69,7 +68,6 @@ function sendRequest() {
 }
 
 function loadUser(userName) {
-    // var userName = document.getElementById("userName").value;
     fetch('http://localhost:8080/user/'.concat(userName))
         // fetch('http://localhost:8080/user/billhoang11')
         .then(response => response.json())
@@ -78,7 +76,6 @@ function loadUser(userName) {
             if (json.message == "Access Denied") {
                 sessionStorage.clear();
                 alert("There are no accounts with this username. Please try again.");
-                // window.location = 'Login.html';
             } else {
                 var userId = json.id
                 createFirstCart(userId);

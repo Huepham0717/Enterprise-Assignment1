@@ -12,7 +12,6 @@ function myFunctionlogin() {
 
 function checkIfLoggedIn() {
     if (sessionStorage.getItem("currentlyLoggedIn") == "1") {
-        // alert("You are already logged in.");
         window.location = '/HTML/Userprofile.html';
     }
 }
@@ -27,7 +26,6 @@ function loadUser() {
             if (json.message == "Access Denied") {
                 sessionStorage.clear();
                 alert("There are no accounts with this username. Please try again.");
-                // window.location = 'Login.html';
             } else {
                 sendRequest();
             }
@@ -55,11 +53,7 @@ function sendRequest() {
             console.log('Success:', data);
             if (data.message == "Access Denied") {
                 alert("Password is incorrect. Please try again.");
-                // window.location = 'login1.html';
             } else {
-
-                // document.cookie = "username=".concat(userName);
-                // console.log(document.cookie);
                 sessionStorage.setItem('currentlyLoggedIn', '1');
                 sessionStorage.setItem('currentUsername', userName);
                 alert(data.message);

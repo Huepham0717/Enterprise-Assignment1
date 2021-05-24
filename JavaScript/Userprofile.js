@@ -41,8 +41,8 @@ function loadUser(userName) {
 
                 var birthDay = json.birthDay
                 document.getElementById("birthDay").value = birthDay;
-                console.log(birthDay)
-                console.log(typeof birthDay)
+                // console.log(birthDay)
+                // console.log(typeof birthDay)
 
                 var email = json.email
                 document.getElementById("email").value = email;
@@ -50,11 +50,10 @@ function loadUser(userName) {
                 var phoneNumber = json.phoneNumber
                 document.getElementById("phoneNumber").value = phoneNumber;
 
-                // var password = json.password
-                // document.getElementById("password").value = password;
-
                 var address = json.address
                 document.getElementById("address").value = address;
+
+                loadActiveCart(userId);
             }
         })
 }
@@ -90,7 +89,6 @@ function sendRequest() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    // document.cookie = "username=".concat(userName);
                     sessionStorage.setItem('currentUsername', userName);
                     alert(data.message);
                     // console.log(requestURL)
@@ -108,4 +106,16 @@ function sendRequest() {
     } else {
         alert("Your password cannot be empty. Please try again.");
     }
+}
+
+function loadActiveCart(userId) {
+    fetch('http://localhost:8080/cart/user/'.concat(userId))
+        .then(response => response.json())
+        .then(json => {
+            var cartId = json[0].cartId
+            console.log(json)
+            console.log(cartId)
+            sessionStorage.setItem("currentCartId", cartId)
+        }
+        )
 }
