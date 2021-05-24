@@ -52,7 +52,8 @@ function sendRequest() {
                     console.log('Success:', data);
                     alert(data.message);
                     if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
-                        window.location = 'Login.html';
+                        loadUser(userName);
+                        // window.location = 'Login.html';
                     }
                 })
                 .catch(err => {
@@ -64,4 +65,70 @@ function sendRequest() {
     } else {
         alert("Your password cannot be empty. Please try again.");
     }
+}
+
+function loadUser(userName) {
+    // var userName = document.getElementById("userName").value;
+    fetch('http://localhost:8080/user/'.concat(userName))
+        // fetch('http://localhost:8080/user/billhoang11')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            if (json.message == "Access Denied") {
+                sessionStorage.clear();
+                alert("There are no accounts with this username. Please try again.");
+                // window.location = 'Login.html';
+            } else {
+                var userId = json.id
+                createFirstCart(userId);
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+function createFirstCart(userId) {
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    today = yyyy + '-' + mm + '-' + dd;
+
+    fetch('http://localhost:8080/cart', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(
+            {
+                "date": today,
+                "user": {
+                    "id": userId
+                }
+            }
+        )
+    })
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log('Success:', data);
+        //     window.location = 'Login.html';
+        //     // alert(data.message);
+        //     // if (data.message === "Account successfully created. Please check your email to verify and activate your account.") {
+        //     //     loadUser(userName);
+        //     //     window.location = 'Login.html';
+        //     // }
+        // })
+        .then(window.location = 'Login.html')
+        .catch(err => {
+            console.log(err)
+        })
 }
