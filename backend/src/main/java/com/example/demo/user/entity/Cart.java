@@ -37,14 +37,14 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private List<CartItem> cartItemList;
 
-    private boolean isCompleted;
+    private int isActive;
 
-    public Cart(Long cartId, LocalDate date, User user, float amount, boolean isCompleted) {
+    public Cart(Long cartId, LocalDate date, User user, float amount, int isActive) {
         this.cartId = cartId;
         this.date = date;
         this.user = user;
         this.amount = amount;
-        this.isCompleted = isCompleted;
+        this.isActive = isActive;
     }
 
 
@@ -80,12 +80,12 @@ public class Cart {
         this.amount = amount;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
+    public int getIsActive() {
+        return isActive;
     }
 
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
+    public void setIsActive(int isActive) {
+        this.isActive = isActive;
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Cart {
                 ", date=" + date +
                 ", user=" + user +
                 ", amount=" + amount +
-                ", closed=" + isCompleted +
+                ", isActive=" + isActive +
                 '}';
     }
 }

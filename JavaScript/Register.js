@@ -113,7 +113,8 @@ function createFirstCart(userId) {
                 "date": today,
                 "user": {
                     "id": userId
-                }
+                },
+                "isActive": 1
             }
         )
     })
