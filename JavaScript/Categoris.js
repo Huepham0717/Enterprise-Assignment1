@@ -147,7 +147,7 @@ function getProducts(productType) {
             console.log(json)
 
             for (let i = 0; i < json.length; i++) {
-
+                var productId = json[i].productId
                 var productName = json[i].productName
                 var description = json[i].description
                 var brand = json[i].brand
@@ -157,7 +157,7 @@ function getProducts(productType) {
                 for (let j = price.length; j >= 0; j -= 3) {
                     if (j !== price.length) {
                         price = price.substring(0, j) + "." + price.substring(j, price.length);
-                        console.log(j)
+                        // console.log(j)
                     }
                 }
 
@@ -167,11 +167,11 @@ function getProducts(productType) {
                             <h4 class="text-center">
                                 <span class="label label-info">${brand}</span>
                             </h4>
-                            <img src="${imgURL}" class="img-responsive" />
+                            <img onclick="selectProduct(${productId})" src="${imgURL}" class="img-responsive" />
                             <div class="caption">
                                 <div class="row" style="display: flex; align-items: center;justify-content: center;">
                                     <div class="col-md-6 col-xs-6" style="font-size: 30px; color:#4682B4; font-weight: bold;">
-                                        <h3 class="content-product-h3">${productName}</h3>
+                                        <h3 onclick="selectProduct(${productId})" class="content-product-h3">${productName}</h3>
                                     </div>
                                     <div class="col-md-6 col-xs-6 price">
                                         <div class="price" style="font-size: 20px; color: #FF4500; font-weight: bold;">
@@ -181,7 +181,7 @@ function getProducts(productType) {
                                 </div>
                                 <p class="content-pr">${description}</p>
                                 <div class="row" style="display: flex; align-items: center;justify-content: center;">
-                                    <button onclick="checkIfLoggedInForCart()" type="button" class="btn btn-cart "><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button>
+                                    <button onclick="addToCart(${productId})" type="button" class="btn btn-cart "><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button>
                                 </div>
 
                                 <p></p>
@@ -189,42 +189,7 @@ function getProducts(productType) {
                         </div>
                     </div>
                 `
-
-                // if (i%3 === 0) {
-                //     document.querySelector(".container").innerHTML += '<div class="row"></div>'
-                // } else {
-                //     document.querySelector(".row").innerHTML += '<div class="col-sm-6 col-md-4"></div>'
-
-                // }
-                // document.write(name)
             }
-
-
-            // userID = json.id
-
-            // var firstName = json.firstName
-            // document.getElementById("firstName").value = firstName;
-
-            // var lastName = json.lastName
-            // document.getElementById("lastName").value = lastName;
-
-            // var userName = json.userName
-            // document.getElementById("userName").value = userName;
-
-            // var email = json.email
-            // document.getElementById("email").value = email;
-
-            // var password = json.password
-            // document.getElementById("password").value = password;
-
-            // var address = json.address
-            // document.getElementById("address").value = address;
-
-            // var phoneNumber = json.phoneNumber
-            // document.getElementById("phoneNumber").value = phoneNumber;
-
-
-
         })
 }
 
@@ -244,4 +209,27 @@ function checkIfLoggedInForCart() {
         alert("You are not signed in. Please sign in first.")
         window.location = '/HTML/Login.html';
     }
+}
+
+function addToCart(productId) {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        if (sessionStorage.getItem("productsInCurrentCart")) {
+            if ((sessionStorage.getItem("productsInCurrentCart")).includes(productId)) {
+                alert("This product is already in your cart. You can click the cart button to change quantity.");
+            } else {
+                sessionStorage.setItem("productsInCurrentCart", sessionStorage.getItem("productsInCurrentCart") + ',' + productId);
+            }
+        } else {
+            sessionStorage.setItem("productsInCurrentCart", productId);
+        }
+
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function selectProduct(productId) {
+    sessionStorage.setItem("selectedProduct", productId);
+    window.location = "ProductHome.html";
 }
