@@ -13,26 +13,26 @@ var close = document.getElementsByClassName("close")[0];
 
 var close_footer = document.getElementsByClassName("close-footer")[0];
 var order = document.getElementsByClassName("order")[0];
-btn.onclick = function() {
+btn.onclick = function () {
     // modal.style.display = "block";
 }
-close.onclick = function() {
+close.onclick = function () {
     modal.style.display = "none";
 }
-close_footer.onclick = function() {
+close_footer.onclick = function () {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-    // delete cart
+}
+// delete cart
 var remove_cart = document.getElementsByClassName("btn-danger");
 for (var i = 0; i < remove_cart.length; i++) {
     var button = remove_cart[i]
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         var button_remove = event.target
         button_remove.parentElement.parentElement.remove()
         updatecart()
@@ -42,7 +42,7 @@ for (var i = 0; i < remove_cart.length; i++) {
 var quantity_input = document.getElementsByClassName("cart-quantity-input");
 for (var i = 0; i < quantity_input.length; i++) {
     var input = quantity_input[i];
-    input.addEventListener("change", function(event) {
+    input.addEventListener("change", function (event) {
         var input = event.target
         if (isNaN(input.value) || input.value <= 0) {
             input.value = 1;
@@ -55,7 +55,7 @@ for (var i = 0; i < quantity_input.length; i++) {
 var add_cart = document.getElementsByClassName("btn-cart");
 for (var i = 0; i < add_cart.length; i++) {
     var add = add_cart[i];
-    add.addEventListener("click", function(event) {
+    add.addEventListener("click", function (event) {
 
         var button = event.target;
         var product = button.parentElement.parentElement;
@@ -63,7 +63,7 @@ for (var i = 0; i < add_cart.length; i++) {
         var title = product.getElementsByClassName("content-product-h3")[0].innerText
         var price = product.getElementsByClassName("price")[0].innerText
         addItemToCart(title, price, img)
-            // when adding product to the the cart, it will show modal
+        // when adding product to the the cart, it will show modal
         modal.style.display = "block";
 
         updatecart()
@@ -94,12 +94,12 @@ function addItemToCart(title, price, img) {
 </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
-    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function() {
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
         var button_remove = event.target
         button_remove.parentElement.parentElement.remove()
         updatecart()
     })
-    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function(event) {
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
         var input = event.target
         if (isNaN(input.value) || input.value <= 0) {
             input.value = 1;
@@ -125,7 +125,7 @@ function updatecart() {
 
 // menu mobile
 var btn_menu = document.getElementById("btnmenu");
-btn_menu.addEventListener("click", function() {
+btn_menu.addEventListener("click", function () {
     var item_menu = document.getElementById("menutop");
     if (item_menu.style.display === "block") {
         item_menu.style.display = "none";
@@ -133,17 +133,17 @@ btn_menu.addEventListener("click", function() {
         item_menu.style.display = "block";
     }
 })
-$(document).ready(function() {
+$(document).ready(function () {
     update_amounts();
     $('.qty, .price').on('keyup keypress blur change',
-        function(e) {
+        function (e) {
             update_amounts();
         });
 });
 
 function update_amounts() {
     var sum = 0.0;
-    $('#Table > tbody > tr').each(function() {
+    $('#Table > tbody > tr').each(function () {
         var qty = $(this).find('.qty').val();
         var price = $(this).find('.price').val();
         var amount = (qty * price)
@@ -157,7 +157,7 @@ var incrementQty;
 var decrementQty;
 var plusBtn = $(".cart-qty-plus");
 var minusBtn = $(".cart-qty-minus");
-var incrementQty = plusBtn.click(function() {
+var incrementQty = plusBtn.click(function () {
     var $n = $(this)
         .parent(".button-container")
         .find(".qty");
@@ -165,7 +165,7 @@ var incrementQty = plusBtn.click(function() {
     update_amounts();
 });
 
-var decrementQty = minusBtn.click(function() {
+var decrementQty = minusBtn.click(function () {
     var $n = $(this)
         .parent(".button-container")
         .find(".qty");
@@ -179,19 +179,93 @@ var decrementQty = minusBtn.click(function() {
 var remove_cart = document.getElementsByClassName("btn-danger");
 for (var i = 0; i < remove_cart.length; i++) {
     var button = remove_cart[i]
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         var button_remove = event.target
         button_remove.parentElement.parentElement.remove()
         updatecart()
     })
 }
 
-// function checkIfLoggedIn() {
-//     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
-//         // window.location = '/HTML/Userprofile.html';
-//         loadCartItem(sessionStorage.getItem("currentCartId")); // TODO
-//     } else {
-//         alert("You are not signed in. Please sign in first.")
-//         window.location = '/HTML/Login.html';
-//     }
-// }
+function checkIfLoggedIn() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        // window.location = '/HTML/Userprofile.html';
+        // loadCartItem(sessionStorage.getItem("currentCartId"));
+        loadEntireCart();
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function loadEntireCart() {
+    if (sessionStorage.getItem("productsInCurrentCart")) {
+        var productsInCurrentCart = sessionStorage.getItem("productsInCurrentCart").split(",")
+        for (let i = 0; i < productsInCurrentCart.length; i++) {
+            populateCartTable(productsInCurrentCart[i]);
+            console.log(productsInCurrentCart[i]);
+        }
+    } else {
+        alert("Your cart is empty.");
+        window.location = "Home.html";
+    }
+}
+
+function populateCartTable(productId) {
+    fetch('http://localhost:8080/product/id/'.concat(productId))
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            var productId = json.productId
+            var productName = json.productName
+            var description = json.description
+            var brand = json.brand
+            var imgURL = json.imgURL
+
+            var price = json.price.toString()
+            for (let j = price.length; j >= 0; j -= 3) {
+                if (j !== price.length) {
+                    price = price.substring(0, j) + "." + price.substring(j, price.length);
+                    // console.log(j)
+                }
+            }
+            var priceFormatted = price + "₫"
+
+            document.querySelector("#tableBody").innerHTML += `
+    <tr>
+        <td>
+            <div class="product-img">
+                <div class="img-product">
+                    <img src="${imgURL}" class="w-50">
+                </div>
+            </div>
+        </td>
+        <td>
+            <p>${productName}</p>
+        </td>
+        <td>
+            <div class="button-container">
+                <button class="cart-qty-plus" type="button" value="+">+</button>
+                <input type="text" name="qty" min="0" class="qty form-control" value="0" />
+                <button class="cart-qty-minus" type="button" value="-">-</button>
+            </div>
+        </td>
+        <td>
+            <input type="text" value="${priceFormatted}" class="price form-control" disabled>
+        </td>
+        <td align="right">$ <span id="amount" class="amount">0</span></td>
+        <td><button onclick="removeFromCart(${productId})" class="btn btn-danger" type="button">Remove</button></td>
+    </tr>
+    `
+        })
+}
+
+function removeFromCart(productId) {
+    var productsInCurrentCart = sessionStorage.getItem("productsInCurrentCart").split(",")
+    // console.log("productsInCurrentCart = " + productsInCurrentCart)  
+    var index = productsInCurrentCart.indexOf(productId)
+    console.log("index = " + index)
+    productsInCurrentCart.splice(productsInCurrentCart.indexOf(productId));
+    var newProductsInCurrentCart = productsInCurrentCart.join();
+    sessionStorage.setItem("productsInCurrentCart", newProductsInCurrentCart);
+    // location.reload();
+}

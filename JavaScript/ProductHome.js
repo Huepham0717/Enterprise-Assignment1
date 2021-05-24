@@ -193,36 +193,37 @@ function getProduct() {
         .then(json => {
             console.log(json)
 
-                var productId = json.productId
-                var productName = json.productName
-                var description = json.description
-                var brand = json.brand
-                var imgURL = json.imgURL
+            var productId = json.productId
+            var productName = json.productName
+            var description = json.description
+            var brand = json.brand
+            var imgURL = json.imgURL
 
-                var price = json.price.toString()
-                for (let j = price.length; j >= 0; j -= 3) {
-                    if (j !== price.length) {
-                        price = price.substring(0, j) + "." + price.substring(j, price.length);
-                    }
+            var price = json.price.toString()
+            for (let j = price.length; j >= 0; j -= 3) {
+                if (j !== price.length) {
+                    price = price.substring(0, j) + "." + price.substring(j, price.length);
                 }
+            }
 
-                document.querySelector("#imgURL").src = imgURL;
-                document.querySelector("#productName").innerHTML = productName;
-                document.querySelector("#description").innerHTML = description;
-                document.querySelector("#priceFormatted").innerHTML = price + "₫";
+            document.querySelector("#imgURL").src = imgURL;
+            document.querySelector("#productName").innerHTML = productName;
+            document.querySelector("#description").innerHTML = description;
+            document.querySelector("#priceFormatted").innerHTML = price + "₫";
         })
 }
 
 function addToCart(productId) {
     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
         if (sessionStorage.getItem("productsInCurrentCart")) {
-            if ((sessionStorage.getItem("productsInCurrentCart")).includes(productId)) {
+            var productsInCurrentCart = sessionStorage.getItem("productsInCurrentCart").split(",")
+            if (productsInCurrentCart.includes(productId)) {
                 alert("This product is already in your cart. You can click the cart button to change quantity.");
             } else {
-                sessionStorage.setItem("productsInCurrentCart", sessionStorage.getItem("productsInCurrentCart") + ',' + productId);
+                sessionStorage.setItem("productsInCurrentCart", sessionStorage.getItem("productsInCurrentCart") + productId + ',');
             }
         } else {
-            sessionStorage.setItem("productsInCurrentCart", productId);
+            sessionStorage.setItem("productsInCurrentCart", productId + ',');
         }
 
     } else {
