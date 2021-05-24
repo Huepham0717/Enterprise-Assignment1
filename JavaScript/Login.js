@@ -7,11 +7,12 @@ function closeSearch() {
 }
 
 function myFunctionlogin() {
-    alert("Please login or register !");
+    alert("You are not signed in. Please sign in first.");
 }
 
 function checkIfLoggedIn() {
     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        alert("You are already logged in.");
         window.location = '/HTML/Userprofile.html';
     }
 }

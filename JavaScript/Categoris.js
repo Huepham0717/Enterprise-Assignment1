@@ -14,7 +14,8 @@ var close = document.getElementsByClassName("close")[0];
 var close_footer = document.getElementsByClassName("close-footer")[0];
 var order = document.getElementsByClassName("order")[0];
 btn.onclick = function () {
-    modal.style.display = "block";
+    // modal.style.display = "block";
+    checkIfLoggedInForCart();
 }
 close.onclick = function () {
     modal.style.display = "none";
@@ -180,7 +181,7 @@ function getProducts(productType) {
                                 </div>
                                 <p class="content-pr">${description}</p>
                                 <div class="row" style="display: flex; align-items: center;justify-content: center;">
-                                    <button type="button" class="btn btn-cart "><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button>
+                                    <button onclick="checkIfLoggedInForCart()" type="button" class="btn btn-cart "><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button>
                                 </div>
 
                                 <p></p>
@@ -225,4 +226,22 @@ function getProducts(productType) {
 
 
         })
+}
+
+function checkIfLoggedInForUser() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        window.location = '/HTML/Userprofile.html';
+    } else {
+        window.location = '/HTML/Login.html';
+    }
+}
+
+function checkIfLoggedInForCart() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        window.location = '/HTML/FinalCart.html';
+
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
 }

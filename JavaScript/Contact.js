@@ -146,8 +146,8 @@ function checkIfLoggedInForUser() {
 
 function checkIfLoggedInForCart() {
     if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
-        // window.location = '/HTML/FinalCart.html';
-        modal.style.display = "block";
+        window.location = '/HTML/FinalCart.html';
+        // modal.style.display = "block";
 
     } else {
         alert("You are not signed in. Please sign in first.")

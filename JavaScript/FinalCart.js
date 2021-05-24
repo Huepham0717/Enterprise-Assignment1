@@ -14,7 +14,7 @@ var close = document.getElementsByClassName("close")[0];
 var close_footer = document.getElementsByClassName("close-footer")[0];
 var order = document.getElementsByClassName("order")[0];
 btn.onclick = function() {
-    modal.style.display = "block";
+    // modal.style.display = "block";
 }
 close.onclick = function() {
     modal.style.display = "none";
@@ -184,4 +184,14 @@ for (var i = 0; i < remove_cart.length; i++) {
         button_remove.parentElement.parentElement.remove()
         updatecart()
     })
+}
+
+function checkIfLoggedIn() {
+    if (sessionStorage.getItem("currentlyLoggedIn") === "1") {
+        // window.location = '/HTML/Userprofile.html';
+        loadCartItem(sessionStorage.getItem("currentCartId")); // TODO
+    } else {
+        alert("You are not signed in. Please sign in first.")
+        window.location = '/HTML/Login.html';
+    }
 }

@@ -26,7 +26,7 @@
 
 </style>
 
-<body>
+<body onload="checkIfLoggedIn()">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -63,11 +63,11 @@
         <i class="fa fa-search"></i>
       </button>
 
-      <button class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
+      <button onclick="window.location = '/HTML/Userprofile.html';" class="userBtn bg-dark"><i class="fa fa-user-circle"></i></button>
       <button class="cartBtn bg-dark" id="cart">
         <i class="fa fa-shopping-cart"></i>
       </button>
-      <div id="myModal" class="modal">
+      <!-- <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Shopping cart</h5>
@@ -92,7 +92,7 @@
             <button type="button" class="btn btn-primary order">Payment</button>
         </div>
         </div>
-        </div>
+        </div> -->
     </nav>
 
     <div class="container-fluid mt-5">
