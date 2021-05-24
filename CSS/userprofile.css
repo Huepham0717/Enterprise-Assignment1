@@ -105,6 +105,14 @@
     border-bottom: 2px solid aqua;
 }
 
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0%;
+}
+
 .navbar-nav {
     margin-left: 40%;
 }
@@ -175,7 +183,7 @@ a {
     color: #92badd;
     display: inline-block;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 18px;
     text-decoration: none;
 }
 

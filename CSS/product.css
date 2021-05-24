@@ -92,6 +92,14 @@
     border-bottom: 2px solid aqua;
 }
 
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0%;
+}
+
 .navbar-nav {
     margin-left: 40%;
 }

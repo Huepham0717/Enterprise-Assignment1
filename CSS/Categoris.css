@@ -146,7 +146,14 @@
     display: block;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0%;
+}
+
 .navbar-brand {
     max-width: 100%;
     height: auto;
@@ -207,7 +214,7 @@
 
 .btn {
     color: whitesmoke;
-    background-color:#36d4ba !important;
+    background-color: #36d4ba !important;
     cursor: pointer;
     outline: none;
     font-weight: 400;
@@ -224,7 +231,7 @@
 
 .btn:hover {
     color: #7f4d3d;
-    background-color:#e2c9bb !important;
+    background-color: #e2c9bb !important;
 }
 
 .btn-danger {

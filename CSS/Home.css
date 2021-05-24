@@ -146,7 +146,6 @@
     display: block;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
 .navbar-brand {
     max-width: 100%;
     height: auto;
@@ -155,6 +154,14 @@
 
 .btn-product {
     width: 100%;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0%;
 }
 
 
@@ -206,7 +213,7 @@
 }
 
 .btn {
-    background-color: #00FF7F;
+    background-color: #1be29F;
     cursor: pointer;
     outline: none;
     font-weight: 400;
