@@ -648,3 +648,7 @@ h5.modal-title {
 .content-pr {
     text-align: center;
 }
+
+.img-responsive, .content-product-h3 {
+    cursor: pointer;
+}
