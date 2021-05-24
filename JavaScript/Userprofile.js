@@ -119,3 +119,9 @@ function loadActiveCart(userId) {
         }
         )
 }
+
+function logOut() {
+    sessionStorage.clear();
+    alert("You have been signed out.");
+    window.location = 'Login.html';
+}
