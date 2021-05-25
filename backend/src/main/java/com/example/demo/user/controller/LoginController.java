@@ -19,15 +19,18 @@ import com.example.demo.user.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
+// this class serves as a "router" for incoming HTTP requests.
+// it also defines the REST APIs of the backend.
 @CrossOrigin
 @RestController
 @RequestMapping("/login")
 @AllArgsConstructor
 public class LoginController {
 
+    // connecting with LoginService.java
     private final LoginService loginService;
 
+    // POST requests go here
     @PostMapping
     public String login(@RequestBody LoginRequest loginRequest) {
         return loginService.login(loginRequest);

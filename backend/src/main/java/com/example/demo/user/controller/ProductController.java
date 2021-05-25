@@ -23,13 +23,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+// this class serves as a "router" for incoming HTTP requests.
+// it also defines the REST APIs of the backend.
 @CrossOrigin
 @RestController
 @RequestMapping(path = "/product")
 public class ProductController {
+
+    // connecting with ProductService.java
     @Autowired
     private final ProductService productService;
 
+    // connecting with ProductRepository.java
     @Autowired
     private final ProductRepository productRepository;
 
@@ -39,6 +44,8 @@ public class ProductController {
         this.productRepository = productRepository;
     }
 
+    // Search for all products using a keyword.
+    // Very powerful. If you need to search for any products containing any string anywhere in its data, you use this.
     @GetMapping(path = "search")
     public List<Product> searchProduct(@RequestParam("keyword") String keyword){
         return productService.searchProduct(keyword.toLowerCase());

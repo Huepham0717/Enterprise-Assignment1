@@ -22,30 +22,41 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// this class serves as a "router" for incoming HTTP requests.
+// it also defines the REST APIs of the backend.
 @CrossOrigin
 @RestController
 @RequestMapping(path = "/cart")
 public class CartController {
+
+    // Connecting with CartService.java
     @Autowired
     private CartService cartService;
+
     @Autowired
     public CartController(CartService cartService) {
         this.cartService = cartService;
     }
+
+    // POST requests go here
     @PostMapping
     public void addNewCart(@RequestBody Cart cart){
         cartService.addNewCart(cart);
     }
-    // GET "localhost:8080/cart/1"
+
+    // GET requests go here
+    // Example: GET "localhost:8080/cart/1"
     @GetMapping(path="{id}")
     public Cart showCart(@PathVariable("id") Long id){
         return cartService.showCart(id);
     }
-    // GET "localhost:8080/cart/user/1"
+    // Example: GET "localhost:8080/cart/user/1"
     @GetMapping(path="user/{userId}")
     public List<Cart> listCart(@PathVariable("userId") Long id){
         return cartService.listCart(id);
     }
+
+    // PUT requests go here
     @PutMapping(path = "{cartId}")
     public String updateAmountInTheCart(@PathVariable("cartId") Long cartId,
                                         @RequestParam(required = false) float amount){

@@ -23,12 +23,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// this class serves as a "router" for incoming HTTP requests.
+// it also defines the REST APIs of the backend.
 @CrossOrigin
 @RestController
 @RequestMapping(path = "/cartItem")
 public class CartItemController {
+
+    // Connecting with CartItemService.java
     @Autowired
     private CartItemService cartItemService;
+
+    // Connecting with CartRepository.java
     @Autowired
     private CartRepository cartRepository;
     @Autowired
