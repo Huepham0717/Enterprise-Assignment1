@@ -4,6 +4,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Nav Bar */
 .navbar-collapse a {
     font-size: 30px;
 }
@@ -163,8 +164,7 @@
     border: 1px solid transparent;
     border-radius: 0%;
 }
-
-
+/* End of Nav Bar */
 
 .carousel,
 .item,

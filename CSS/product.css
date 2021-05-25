@@ -1,3 +1,6 @@
+
+
+/* Nav Bar */
 .navbar-collapse a {
     font-size: 30px;
 }
@@ -153,7 +156,7 @@
     width: 100%;
 }
 
-
+/* End of Nav Bar */
 
 
 .position {
@@ -175,7 +178,6 @@ footer {
     background-color: blue;
 }
 
-.item_div {}
 
 .item_div:hover {
     box-shadow: 0 0 11px rgba(33, 33, 33, .2);

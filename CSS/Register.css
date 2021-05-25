@@ -3,7 +3,7 @@
     padding: 0.0;
     font-family: 'Poppins', sans-serif;
 }
-
+/* Nav Bar */
 .navbar-collapse a {
     font-size: 30px;
 }
@@ -164,7 +164,7 @@
 .btn-product {
     width: 100%;
 }
-
+/* End of Nav Bar */
 
 /* BASIC */
 
