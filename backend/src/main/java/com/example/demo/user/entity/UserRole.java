@@ -14,6 +14,7 @@
 
 package com.example.demo.user.entity;
 
+// Contains list of possible user roles and therefore privileges.
 public enum UserRole {
     USER,
     ADMIN

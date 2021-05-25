@@ -21,6 +21,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+// This class is the template from which Spring Boot will construct a database entity named "products".
+// "products" stores all the products in the database.
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -28,6 +30,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "products",uniqueConstraints={@UniqueConstraint(columnNames ={"productId"})})
 public class Product {
+    // Telling Spring Boot to treat productId as the primary key
+    // and also auto-generate a unique productId for every entry in the table.
     @SequenceGenerator(
             name = "product_sequence",
             sequenceName = "product_sequence",
@@ -39,6 +43,7 @@ public class Product {
             generator = "product_sequence"
     )
     private Long productId;
+
     private String productName;
     private String brand;
     private String type;

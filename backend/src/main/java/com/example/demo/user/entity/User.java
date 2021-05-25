@@ -28,6 +28,8 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
+// This class is the template from which Spring Boot will construct a database entity named "users".
+// "users" stores all the users in the database.
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -36,6 +38,8 @@ import java.util.Collections;
 @Table(name = "users",uniqueConstraints={@UniqueConstraint(columnNames ={"email", "userName"})})
 public class User implements UserDetails {
 
+    // Telling Spring Boot to treat id as the primary key
+    // and also auto-generate a unique id for every entry in the table.
     @SequenceGenerator(
             name = "user_sequence",
             sequenceName = "user_sequence",
@@ -47,6 +51,7 @@ public class User implements UserDetails {
             generator = "user_sequence"
     )
     private Long id;
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -54,12 +59,16 @@ public class User implements UserDetails {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDay;
+
     private Long phoneNumber;
     private String address;
     private String email;
 
+    // either USER or ADMIN
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
+
+    // This column stores whether an account has been activated through email or not.
     private Boolean locked = false;
     private Boolean enabled = false;
 

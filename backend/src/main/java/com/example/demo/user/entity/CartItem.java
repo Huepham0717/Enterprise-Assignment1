@@ -21,6 +21,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+// This class is the template from which Spring Boot will construct a database entity named "cart_item".
+// "cart_item" stores all the products that is found within each cart in the database.
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -28,6 +30,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cartItem")
 public class CartItem {
+    // Telling Spring Boot to treat cartItemId as the primary key
+    // and also auto-generate a unique cartItemId for every entry in the table.
     @SequenceGenerator(
             name = "cartItem_sequence",
             sequenceName = "cartItem_sequence",
@@ -39,13 +43,23 @@ public class CartItem {
             generator = "cartItem_sequence"
     )
     private Long cartItemId;
+
+    // Stores the ID of a product belonging to a particular cart (Foreign Key)
+    // One cart_item can have many products
     @ManyToOne
     @JoinColumn(nullable = false,name = "product_id")
     private Product product;
+
+    // Stores the ID of a cart whom a cart_item entry belongs to (Foreign Key)
+    // One cart can have many cart_item
     @ManyToOne
     @JoinColumn(nullable = false,name = "cart_id")
     private Cart cart;
+
+    // Quantity colume
     private int quantity;
+
+    // amount = MSRP * quantity
     private float amount;
 
     public Long getCartItemId() {

@@ -24,6 +24,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+// This class is the template from which Spring Boot will construct a database entity named "cart".
+// "cart" stores all carts in the database.
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -31,6 +33,8 @@ import java.util.List;
 @Entity
 @Table(name = "cart", uniqueConstraints = {@UniqueConstraint(columnNames = {"cartId"})})
 public class Cart {
+    // Telling Spring Boot to treat cartId as the primary key
+    // and also auto-generate a unique cartId for every entry in the table.
     @SequenceGenerator(
             name = "cart_sequence",
             sequenceName = "cart_sequence",
@@ -42,15 +46,22 @@ public class Cart {
             generator = "cart_sequence"
     )
     private Long cartId;
+
+    // Date column
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+
+    // Stores the ID of the user whom a particular cart belongs to (Foreign Key)
+    // One user can have many carts
     @ManyToOne
     @JoinColumn(nullable = false, name = "id")
     private User user;
-    private float amount;
-//    @OneToMany(mappedBy = "cart")
-//    private List<CartItem> cartItemList;
 
+    // Stores total value of the cart
+    private float amount;
+
+    // Stores the status of the cart.
+    // If a cart is not paid yet, it is Active (1). Once it is paid, it is no longer Active (0).
     private int isActive;
 
     public Cart(Long cartId, LocalDate date, User user, float amount, int isActive) {

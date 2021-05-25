@@ -22,6 +22,8 @@ import com.example.demo.user.entity.User;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+// a token is created everytime a user successfully activates their account.
+// this class is the table holding all tokens.
 @Getter
 @Setter
 @NoArgsConstructor
