@@ -34,8 +34,8 @@ public class Cart {
     @JoinColumn(nullable = false, name = "id")
     private User user;
     private float amount;
-    @OneToMany(mappedBy = "cart")
-    private List<CartItem> cartItemList;
+//    @OneToMany(mappedBy = "cart")
+//    private List<CartItem> cartItemList;
 
     private int isActive;
 
