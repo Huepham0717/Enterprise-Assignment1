@@ -198,16 +198,22 @@ function checkIfLoggedIn() {
 }
 
 function loadEntireCart() {
-    if (sessionStorage.getItem("productsInCurrentCart")) {
-        var productsInCurrentCart = sessionStorage.getItem("productsInCurrentCart").split(",")
-        for (let i = 0; i < productsInCurrentCart.length; i++) {
-            populateCartTable(productsInCurrentCart[i]);
-            console.log(productsInCurrentCart[i]);
-        }
-    } else {
-        alert("Your cart is empty.");
-        window.location = "Home.html";
-    }
+    fetch('http://localhost:8080/cartItem/'.concat(sessionStorage.getItem("currentCartId")))
+        .then(response => response.json())
+        .then(json => {
+            // console.log(json.length)
+            if (json.length === 0) {
+                alert("Your cart is empty.");
+                window.location = "Home.html";
+            } else {
+                for (let i = 0; i < json.length; i++) {
+
+                    var productIdElement = json[i].product.productId;
+
+                    populateCartTable(productIdElement);
+                }
+            }
+        })
 }
 
 function populateCartTable(productId) {
@@ -221,8 +227,9 @@ function populateCartTable(productId) {
             var brand = json.brand
             var imgURL = json.imgURL
 
-            var price = json.price.toString()
-            for (let j = price.length; j >= 0; j -= 3) {
+            var priceRaw = json.price
+            var price = priceRaw.toString()
+            for (let j = price.length; j > 0; j -= 3) {
                 if (j !== price.length) {
                     price = price.substring(0, j) + "." + price.substring(j, price.length);
                     // console.log(j)
@@ -244,28 +251,59 @@ function populateCartTable(productId) {
         </td>
         <td>
             <div class="button-container">
-                <button class="cart-qty-plus" type="button" value="+">+</button>
-                <input type="text" name="qty" min="0" class="qty form-control" value="0" />
-                <button class="cart-qty-minus" type="button" value="-">-</button>
+                <input id="quantity" onchange="calculateTotal(${priceRaw})" type="number" name="quantity" min="0" class="qty form-control" value="1" />
             </div>
         </td>
         <td>
             <input type="text" value="${priceFormatted}" class="price form-control" disabled>
         </td>
-        <td align="right">$ <span id="amount" class="amount">0</span></td>
-        <td><button onclick="removeFromCart(${productId})" class="btn btn-danger" type="button">Remove</button></td>
+        <td onload="calculateTotal(${priceRaw})" name="productTotal" id="productTotal" align="right">${priceFormatted}</td>
+        <td><button onclick="removeFromCart(${sessionStorage.getItem(`currentCartId`)},${productId})" class="btn btn-danger" type="button">Remove</button></td>
     </tr>
     `
         })
 }
 
-function removeFromCart(productId) {
-    var productsInCurrentCart = sessionStorage.getItem("productsInCurrentCart").split(",")
-    // console.log("productsInCurrentCart = " + productsInCurrentCart)  
-    var index = productsInCurrentCart.indexOf(productId)
-    console.log("index = " + index)
-    productsInCurrentCart.splice(productsInCurrentCart.indexOf(productId));
-    var newProductsInCurrentCart = productsInCurrentCart.join();
-    sessionStorage.setItem("productsInCurrentCart", newProductsInCurrentCart);
-    // location.reload();
+function removeFromCart(cid, pid) {
+    var requestURL = 'http://localhost:8080/cartItem/remove/' + cid + '/' + pid
+    // console.log(requestURL)
+    fetch(requestURL, {
+        method: 'POST'
+    })
+        .then(window.location.reload())
+        // .then(document.querySelector("#tableBody").innerHTML = "")
+        // .then(loadEntireCart())
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+// // change quantity 
+// var quantity_input = document.getElementsByClassName("qty form-control");
+// console.log(quantity_input)
+// for (var i = 0; i < quantity_input.length; i++) {
+//     var input = quantity_input[i];
+//     input.addEventListener("change", function (event) {
+//         var input = event.target
+//         if (isNaN(input.value) || input.value <= 0) {
+//             input.value = 1;
+//         }
+//         calculateTotal()
+//     })
+// }
+
+function calculateTotal(priceRaw) {
+    var quantity = document.querySelector("#quantity").value;
+    productTotal = quantity*priceRaw
+    productTotal = productTotal.toString()
+
+    for (let x = productTotal.length; x > 0; x -= 3) {
+        if (x !== productTotal.length) {
+            productTotal = productTotal.substring(0, x) + "." + productTotal.substring(x, productTotal.length);
+            // console.log(j)
+        }
+    }
+    var productTotalFormatted = productTotal + "₫"
+    document.querySelector("#productTotal").innerHTML = productTotal+"₫"
+    // console.log(quantity)
 }
