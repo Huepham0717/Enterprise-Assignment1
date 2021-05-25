@@ -156,230 +156,6 @@
 }
 
 
-/* modal */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: .3rem;
-    outline: 0;
-}
-
-.modal-body {
-    padding: 1rem;
-}
-
-.modal-footer {
-    display: flex;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
-}
-
-.modal-footer>:not(:first-child) {
-    margin-left: .25rem;
-}
-
-.btn {
-    background-color: #00FF7F;
-    cursor: pointer;
-    outline: none;
-    font-weight: 400;
-    line-height: 1.25;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    padding: .5rem 1rem;
-    font-size: 15px;
-    border-radius: .25rem;
-    transition: all .2s ease-in-out;
-}
-
-.btn-danger {
-    background-color: red;
-}
-
-.btn-danger:hover {
-    background-color: #DC143C;
-}
-
-.btn-secondary {
-    font-size: 20px;
-    background-color: #708090;
-    border-color: #ccc;
-}
-
-.btn-primary {
-    font-size: 20px;
-    color: #fff;
-    background-color: #0275d8;
-    border-color: #0275d8;
-}
-
-.modal-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #aaaaaa;
-    padding: 1rem;
-}
-
-h5.modal-title {
-    font-size: 25px;
-    color: teal;
-    font-weight: 10px;
-}
-
-.close {
-    color: #aaaaaa;
-    font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
-}
-
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.cart-row {
-    display: flex;
-}
-
-.cart-item {
-    width: 45%;
-}
-
-.cart-price {
-    width: 20%;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.cart-quantity {
-    width: 35%;
-}
-
-.cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
-}
-
-.cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.btn-danger {
-    color: white;
-    background-color: #EB5757;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
-
-.btn-danger:hover {
-    background-color: #CC4C4C;
-}
-
-.cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #56CCF2;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
-}
-
-.cart-row:last-child {
-    border-bottom: 1px solid black;
-}
-
-.cart-row:last-child .cart-column {
-    border: none;
-}
-
-.cart-total {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
-}
-
-.cart-total-price {
-    color: #333;
-    font-size: 1.1em;
-}
 
 
 /* -----------------------------------  */
@@ -403,323 +179,105 @@ h5.modal-title {
 }
 
 
-/* modal */
+html {
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Exo+2|Yatra+One');
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
 }
 
-.modal-content {
-    margin: 0 auto;
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: .3rem;
-    outline: 0;
+body{
+  background: whitesmoke;
 }
 
-.modal-body {
-    padding: 1rem;
+.wrapper{
+  margin-top: 60px;
+  text-align: center;
 }
 
-.modal-footer {
-    display: flex;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-top: 1px solid #aaaaaa;
-    padding: 1rem;
+.wrapper h1{
+  font-family: 'Yatra One', cursive;
+  font-size: 48px;
+  color: cyan;
+  margin-bottom: 25px;
 }
 
-.modal-footer>:not(:first-child) {
-    margin-left: .25rem;
+.our_team{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.btn {
-    background-color: #00FF7F;
-    cursor: pointer;
-    outline: none;
-    font-weight: 400;
-    line-height: 1.25;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    padding: .5rem 1rem;
-    font-size: 15px;
-    border-radius: .25rem;
-    transition: all .2s ease-in-out;
+.our_team .team_member{
+  width: 250px;
+  margin: 5px;
+  background: #fff;
+  padding: 20px 10px;
 }
 
-.btn-danger {
-    background-color: red;
+.our_team .team_member .member_img{
+  
+  max-width: 190px;
+  width: 100%;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
 }
 
-.btn-danger:hover {
-    background-color: #DC143C;
+.our_team .team_member .member_img img{
+  width: 100%;
+  height: 100%;
 }
 
-.btn-secondary {
-    font-size: 20px;
-    background-color: #708090;
-    border-color: #ccc;
+.our_team .team_member h3{
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0px;
 }
 
-.btn-primary {
-    font-size: 20px;
-    color: #fff;
-    background-color: #0275d8;
-    border-color: #0275d8;
+.our_team .team_member span{
+  font-size: 10px;
 }
 
-.modal-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #aaaaaa;
-    padding: 1rem;
+.our_team .team_member p{
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-h5.modal-title {
-    font-size: 25px;
-    color: teal;
-    font-weight: 10px;
+.our_team .team_member .member_img .social_media{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: rgba(0,0,0,0.65);
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+   transition: all 0.5s ease;
 }
 
-.close {
-    color: #aaaaaa;
-    font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+.our_team .team_member .member_img  .item{
+  margin: 0 10px;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+.our_team .team_member .member_img .social_media .fab{
+  color: #8c7ae6;
+  font-size: 20px;
 }
 
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
-}
-
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.cart-row {
-    display: flex;
-}
-
-.cart-item {
-    width: 45%;
-}
-
-.cart-price {
-    width: 20%;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.cart-quantity {
-    width: 35%;
-}
-
-.cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
-}
-
-.cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.btn-danger {
-    color: white;
-    background-color: #EB5757;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
-
-.btn-danger:hover {
-    background-color: #CC4C4C;
-}
-
-.cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #56CCF2;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
-}
-
-.cart-row:last-child {
-    border-bottom: 1px solid black;
-}
-
-.cart-row:last-child .cart-column {
-    border: none;
-}
-
-.cart-total {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
-}
-
-.cart-total-price {
-    color: #333;
-    font-size: 1.1em;
-}
-
-.navbar-dark .navbar-nav .nav-link .nav-link {
-    font-size: 180%;
-    padding: 0 20%;
-    margin-right: 50%;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-.column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
-.memberimage {
-    width: 10px;
-    height: 500px;
-    float: center;
-}
-
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    padding: 0 16px;
-}
-
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.title {
-    color: grey;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-.column {
-    float: left;
-    width: 24%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
-.memberimage {
-    width: 8px;
-    height: 400px;
-    float: center;
-}
-
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    padding: 0 16px;
-}
-
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.title {
-    color: grey;
-}
