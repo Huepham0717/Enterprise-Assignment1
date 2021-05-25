@@ -52,7 +52,11 @@ STEP 2:
 	- Open the "Enterprise-Assignment1/backend" folder AS A PROJECT in IntelliJ IDEA.
 
 STEP 3:
-	- In IntelliJ IDEA, look for "pom.xml" in the project file. Right-click this file -> Maven -> Reload Project. Choose "Trust Project" if prompted. Then run DemoApplication.java.
+	- In IntelliJ IDEA, look for "pom.xml" in the project file. 
+		- Right-click this file -> Maven -> Reload Project. 
+		- Choose "Trust Project" if prompted. 
+		- Then open src/main/resources/application.properties. Replace the password in "spring.datasource.password=password" with the password of your PostgreSQL databse. 
+		- Then run src/main/java/com.example.demo/DemoApplication.java.
 	- In Visual Studio Code, find and open "Home.html". Right click and choose "Open with LiveServer".
 	
 STEP 4:
