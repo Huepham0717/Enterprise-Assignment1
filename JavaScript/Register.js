@@ -54,6 +54,8 @@ function sendRequest() {
                         loadUser(userName);
                         alert(data.message);
                         window.location = 'Login.html';
+                    } else {
+                        alert(data.message)
                     }
                 })
                 .catch(err => {

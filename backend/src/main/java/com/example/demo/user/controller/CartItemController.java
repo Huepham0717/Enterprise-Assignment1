@@ -21,14 +21,20 @@ public class CartItemController {
     public CartItemController(CartItemService cartItemService) {
         this.cartItemService = cartItemService;
     }
+
+    // add new product to cart
     @PostMapping
     public void addNewCartItem(@RequestBody CartItem cartItem){
         cartItemService.addNewCartItem(cartItem);
     }
+
+    // load everything in CartItem by cartId
     @GetMapping(path="{id}")
     public List<CartItem> showCart(@PathVariable("id") Long id){
         return cartItemService.listCartItems(id);
     }
+
+    // modify a product that is already in cart
     @PostMapping(path = "/add/{cid}/{pid}/{qty}")
     public String addProductToCart(@PathVariable("cid") Long id,
                                    @PathVariable("pid") Long productId,
