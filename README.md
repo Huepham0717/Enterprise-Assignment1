@@ -1,5 +1,7 @@
 # EEET2580 - Enterprise App Dev (2021A) Assignment by Group 8
 
+GitHub repo: https://github.com/Huepham0717/Enterprise-Assignment1.git
+
 Lecturer: Nguyen Ngoc Thanh PhD.
 
 Group 8:
